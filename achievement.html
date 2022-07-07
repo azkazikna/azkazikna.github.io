@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="dist/img/logo.png">
+    <title>Portfolio Design | Azkazikna</title>
+    <link rel="stylesheet" href="dist/css/output.css">
+    <link rel="stylesheet" href="dist/css/locomotive.css">
+    <link rel="stylesheet" href="dist/css/swiper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-background font-poppins text-white smooth-scroll-wrapper" data-barba="wrapper">
+    <!-- loading start -->
+    <div class="load-container">
+        <div class="loading-screen"></div>
+    </div>
+    <!-- loading end -->
+
+<div data-scroll-container>
+    <!-- header start -->
+    <header class="fixed top-0 w-full flex justify-center transition duration-500 ease-in-out z-[99999] bg-background bg-opacity-70 backdrop-blur-sm;">
+        <div class="container flex justify-between items-center px-3 py-2">
+            <div class="px-4 py-3">
+                <a href="index.html"><img src="dist/img/logo.png" alt="" class="w-[85px]"></a>
+            </div>
+            <button class="hamburger px-4 py-3 lg:hidden" type="button">
+                <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line transition duration-300 ease-in-out"></span>
+                <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+            </button>
+            <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] border-white rounded-xl lg:static lg:block lg:border-0 bg-background lg:bg-transparent">
+                <ul class="lg:flex gap-5 items-center">
+                    <a id="nav-items" href="#about"><li class="text-white text-base font-extralight mt-3 lg:mt-0">About</li></a>
+                    <a id="nav-items" href="#work"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Experience</li></a>
+                    <a id="nav-items" href="#built"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Work</li></a>
+                    <a id="nav-items" href="#contact"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Contact</li></a>
+                    <a id="nav-items" href=""><li class="text-primary font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-primary rounded hover:bg-primary hover:text-background hover:border-background transition duration-300 ease-in">Resume</li></a>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- header end -->
+
+<main data-barba="container" data-barba-namespace="achievement" data-scroll-section>
+    <!-- project section start -->
+    <section id="project" class="py-48">
+        <div class="container mx-auto">
+            <h4 class="font-semibold text-white text-2xl lg:text-3xl text-center mb-8">Noteworthy Achievement</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 gap-10">
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat_dicoding_javascript_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Javascript</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat_dicoding_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Web</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat_dicoding_pemula_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Membuat Front-End Web untuk Pemula</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat_dicoding_dasarsoftware_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Memulai Dasar Pemrograman untuk Menjadi Pengembang Software</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/cert-1014-15096241.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">HTML Course</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">SoloLearn Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/cert-1023-15096241.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">CSS Course</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">SoloLearn Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat best student.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of "Software Engineering"</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
+                </div>
+                <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
+                    <div class="flex justify-between mb-6">
+                        <div class=""></div>
+                        <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z"/>
+                        </svg>
+                    </div>
+                    <img src="dist/img/achievement/sertifikat best student rpl.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
+                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of The Years "Software Engineering"</h4></a>
+                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- project section end -->
+
+    <!-- footer start -->
+    <footer id="footer">
+        <div class="container px-4 py-8 mx-auto">
+            <p class="font-extralight text-base text-secondary text-center">Designed by <a href="" class="text-white">Stephen Gachoka</a> Built by <a href="" class="text-white">Azkazikna Ageung Laksana</a></p>
+        </div>
+    </footer>
+    <!-- footer end -->
+</main>
+</div>
+    <!-- to top -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/prefetch@2.1.10/dist/barba-prefetch.umd.min.js"></script>p
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="dist/js/locomotive.js"></script>
+    <script src="dist/js/script.js"></script>
+    <script src="dist/js/transition.js"></script>
+</body>
+</html>

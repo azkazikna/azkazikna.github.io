@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.1.4"
+  },
+  "dependencies": {
+    "smooth-scrollbar": "^8.7.4",
+    "type": "module"
   }
 }
