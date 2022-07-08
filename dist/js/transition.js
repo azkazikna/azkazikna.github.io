@@ -1,6 +1,5 @@
 // tell Barba to use the prefetch module
 barba.use(barbaPrefetch);
-
 // Init Barba
 barba.init({
     cacheIgnore: false,

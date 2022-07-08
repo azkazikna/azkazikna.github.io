@@ -35,6 +35,14 @@ function contentAnimation() {
     tl2.from(".animate-this2",{x: -30, duration: 1, opacity: 0, stagger: 1, delay:1 });
 }
 
+function contentAnimationStart() {
+    var tl = gsap.timeline();
+    tl.from(".animate-this", { duration: 1, y: 30, opacity: 0, stagger: 0.4});
+    var tl2 = gsap.timeline();
+    tl2.from(".animate-this2",{x: -30, duration: 1, opacity: 0, stagger: 1});
+}
+
+pageTransition();
 contentAnimation();
 
 const hamburger = document.querySelector('.hamburger');
@@ -96,7 +104,15 @@ const swiper = new Swiper('.swiper', {
 
 var scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true
+    smooth: true,
+    mobile: {
+        breakpoint: 0,
+        smooth: true
+    },
+    tablet: {
+        breakpoint: 0,
+        smooth: true
+    }
 });
 
 function work() {
