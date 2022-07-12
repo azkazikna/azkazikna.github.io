@@ -105,14 +105,6 @@ const swiper = new Swiper('.swiper', {
 var scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    mobile: {
-        breakpoint: 0,
-        smooth: true
-    },
-    tablet: {
-        breakpoint: 0,
-        smooth: true
-    }
 });
 
 function work() {
@@ -167,3 +159,15 @@ function work() {
 }
 
 work();
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".animate-paragraf", {
+    scrollTrigger: {
+        trigger: ".animate-paragraf",
+        toggleActions: "play none none none"
+    },
+    opacity: 0,
+    delay: 3,
+    duration:3
+})
