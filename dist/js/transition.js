@@ -10,7 +10,7 @@ barba.init({
             // sync: true,
             // css classes will look like `.fade-xxx-[-xxx]`
             // name: 'fade',
-            before({ current, next, trigger }) {
+            before({ current, next, trigger }) {   
             },
             async leave({ current, next, trigger }) {
                 const done = this.async();
