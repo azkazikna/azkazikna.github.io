@@ -1,3 +1,15 @@
+// loading
+
+function loading() {
+    setTimeout(() => {
+        const spinnerWrapper = document.querySelector('.spinner-wrapper');
+        spinnerWrapper.style.top = '-100vh';
+        contentAnimationStart();
+    }, 2000)
+};
+
+loading();
+
 // animation transition
 function delay(n) {
     n = n || 2000;

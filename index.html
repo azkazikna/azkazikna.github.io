@@ -15,8 +15,18 @@
 </head>
 <body class="bg-background font-poppins text-white" data-barba="wrapper">
     <!-- loading start -->
+    <div class="spinner-wrapper">
+        <div class="spinner"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+<circle cx="50" cy="50" r="32" stroke-width="8" stroke="#64ffda" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round">
+  <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+</circle>
+<circle cx="50" cy="50" r="23" stroke-width="8" stroke="#112240" stroke-dasharray="36.12831551628262 36.12831551628262" stroke-dashoffset="36.12831551628262" fill="none" stroke-linecap="round">
+  <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1" values="0 50 50;-360 50 50"></animateTransform>
+</circle></svg></div>
+    </div>
     <div class="load-container">
         <div class="loading-screen"></div>
+        <div class="loading-screen2"></div>
     </div>
     <!-- loading end -->
 <div data-scroll-container>
@@ -32,7 +42,7 @@
                 <span class="hamburger-line transition duration-300 ease-in-out"></span>
                 <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
             </button>
-            <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] border-white rounded-xl lg:static lg:block lg:border-0 bg-background lg:bg-transparent">
+            <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] border-white rounded-xl lg:static lg:block lg:border-0 bg-background lg:bg-transparent" data-barba-prevent="all">
                 <ul class="lg:flex gap-5 items-center">
                     <a id="nav-items" href="#about"><li class="text-white text-base font-extralight mt-3 hover:scale-105 transition duration-500 ease-in-out lg:mt-0">About</li></a>
                     <a id="nav-items" href="#work"><li class="text-white text-base font-extralight mt-3 hover:scale-105 transition duration-500 ease-in-out lg:mt-0">Experience</li></a>
@@ -217,6 +227,27 @@
                         <img src="dist/img/project/lsp.png" alt="" class="">
                         <div class="card-body px-6 py-7 bg-project">
                             <h5 class="font-semibold text-xl lg:text-2xl text-secondary mb-4">Online Professional Certification Registration</h5>
+                            <div class="flex items-center gap-2 mb-6">
+                                <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z" fill="#64FFDA"/>
+                                </svg>
+                                <p>CodeIgniter</p>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <a href="#">View Code
+                                    <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
+                                        <path d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z" fill="white"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-primary border-2 border-primary transition duration-500 ease-in-out">Live Preview</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden swiper-slide">
+                        <img src="dist/img/project/evoting.png" alt="" class="">
+                        <div class="card-body px-6 py-7 bg-project">
+                            <h5 class="font-semibold text-xl lg:text-2xl text-secondary">E-Voting PENUS</h5>
+                            <br><br>
                             <div class="flex items-center gap-2 mb-6">
                                 <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z" fill="#64FFDA"/>

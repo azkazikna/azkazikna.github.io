@@ -632,16 +632,8 @@ video {
   top: -5px;
 }
 
-.bottom-4 {
-  bottom: 1rem;
-}
-
 .z-\[99999\] {
   z-index: 99999;
-}
-
-.z-\[9999\] {
-  z-index: 9999;
 }
 
 .mx-auto {
@@ -782,10 +774,6 @@ video {
   width: 18rem;
 }
 
-.w-14 {
-  width: 3.5rem;
-}
-
 .min-w-\[250px\] {
   min-width: 250px;
 }
@@ -804,6 +792,10 @@ video {
 
 .origin-bottom-left {
   transform-origin: bottom left;
+}
+
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -864,10 +856,6 @@ video {
 
 .rounded-lg {
   border-radius: 0.5rem;
-}
-
-.rounded-full {
-  border-radius: 9999px;
 }
 
 .border-\[1px\] {
@@ -937,10 +925,6 @@ video {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.p-4 {
-  padding: 1rem;
 }
 
 .px-3 {
@@ -1094,12 +1078,6 @@ video {
   color: rgb(2 12 27 / var(--tw-text-opacity));
 }
 
-.shadow-lg {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
 .transition {
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1194,6 +1172,16 @@ header {
   height: 100%;
 }
 
+.loading-screen2 {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  background-color: #020C1B;
+  width: 0%;
+  height: 100%;
+}
+
 .load-container {
   position: fixed;
   top: 0;
@@ -1203,6 +1191,28 @@ header {
   overflow: hidden;
   z-index: 999999;
   pointer-events: none;
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999999;
+  pointer-events: none;
+  background-color: #020C1B;
+  transition: 1s;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .hover\:scale-105:hover {
@@ -1221,23 +1231,6 @@ header {
   --tw-scale-x: .95;
   --tw-scale-y: .95;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-@-webkit-keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-@keyframes pulse {
-  50% {
-    opacity: .5;
-  }
-}
-
-.hover\:animate-pulse:hover {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .hover\:border-background:hover {
@@ -1341,10 +1334,6 @@ header {
 
   .lg\:w-\[85\%\] {
     width: 85%;
-  }
-
-  .lg\:w-20 {
-    width: 5rem;
   }
 
   .lg\:grow-\[5\] {
