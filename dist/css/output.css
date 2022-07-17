@@ -750,6 +750,14 @@ video {
   height: 300px;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-\[50\%\] {
+  height: 50%;
+}
+
 .w-full {
   width: 100%;
 }
@@ -772,6 +780,18 @@ video {
 
 .w-72 {
   width: 18rem;
+}
+
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-\[100\] {
+  width: 100;
+}
+
+.w-\[100\%\] {
+  width: 100%;
 }
 
 .min-w-\[250px\] {
@@ -912,6 +932,34 @@ video {
 
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
+}
+
+.bg-\[url\(\'\.\.\/img\/achievement\/sertifikat_dicoding_javascript_page-0001\.jpg\'\)\] {
+  background-image: url('../img/achievement/sertifikat_dicoding_javascript_page-0001.jpg');
+}
+
+.bg-\[url\(\'dist\/img\/achievement\/sertifikat_dicoding_javascript_page-0001\.jpg\'\)\] {
+  background-image: url('dist/img/achievement/sertifikat_dicoding_javascript_page-0001.jpg');
+}
+
+.bg-\[url\(\'\.\/dist\/img\/achievement\/sertifikat_dicoding_javascript_page-0001\.jpg\'\)\] {
+  background-image: url('./dist/img/achievement/sertifikat_dicoding_javascript_page-0001.jpg');
+}
+
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .fill-primary {
@@ -1259,6 +1307,18 @@ header {
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
   color: rgb(100 255 218 / var(--tw-text-opacity));
+}
+
+.group:hover .group-hover\:scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:scale-125 {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .group:hover .group-hover\:fill-background {

@@ -116,14 +116,6 @@ const swiper = new Swiper('.swiper', {
 var scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    mobile: {
-        breakpoint: 0,
-        smooth: true
-    },
-    tablet: {
-        breakpoint: 0,
-        smooth: true
-    }
 });
 
 // On scroll
