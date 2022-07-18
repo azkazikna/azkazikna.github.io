@@ -1245,8 +1245,8 @@ video {
 .dark #work input[type='radio']:checked + label {
   --tw-border-opacity: 1;
   border-color: rgb(100 255 218 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.2;
 }
 
 .text {
@@ -1480,6 +1480,10 @@ video {
 .dark .dark\:hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-opacity-20:hover {
+  --tw-bg-opacity: 0.2;
 }
 
 .dark .dark\:hover\:fill-white:hover {
