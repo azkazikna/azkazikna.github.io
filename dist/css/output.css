@@ -1187,6 +1187,7 @@ video {
   z-index: -1;
   height: 100%;
   width: 100%;
+  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(49 47 49 / var(--tw-bg-opacity));
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -1383,14 +1384,14 @@ video {
   background-color: rgb(50 39 39 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-textLight:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(49 47 49 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-textLight:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 47 49 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-opacity-20:hover {
