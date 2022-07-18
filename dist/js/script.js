@@ -1,5 +1,4 @@
 // loading
-
 function loading() {
     setTimeout(() => {
         const spinnerWrapper = document.querySelector('.spinner-wrapper');
@@ -9,6 +8,16 @@ function loading() {
 };
 
 loading();
+
+// dark mode toggle
+const html = document.querySelector('html');
+const logo = document.querySelector('.logo');
+const toggleMode = document.getElementById('toggleMode');
+
+toggleMode.addEventListener('change', ()=>{
+  html.classList.toggle('dark');
+})
+
 
 // animation transition
 function delay(n) {

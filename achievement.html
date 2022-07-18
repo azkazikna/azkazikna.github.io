@@ -12,9 +12,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/27e42df87e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-background font-poppins text-white smooth-scroll-wrapper" data-barba="wrapper">
+<body class="dark:bg-background font-poppins dark:text-white text-textLight bg-bgLight" data-barba="wrapper">
     <!-- loading start -->
     <div class="load-container">
         <div class="loading-screen"></div>
@@ -23,23 +24,30 @@
 
 <div data-scroll-container>
     <!-- header start -->
-    <header class="fixed top-0 w-full flex justify-center transition duration-500 ease-in-out z-[99999] bg-background bg-opacity-70 backdrop-blur-sm;">
+    <header class="fixed top-0 w-full flex justify-center transition duration-300 ease-linear z-[99999] bg-[#F0EEF0] dark:bg-background bg-opacity-70 dark:bg-opacity-70 dark:backdrop-blur-sm backdrop-blur-sm border-b-[0.2px]  border-textLight dark:border-white border-opacity-20 dark:border-opacity-20">
         <div class="container flex justify-between items-center px-3 py-2">
             <div class="px-4 py-3">
-                <a href="index.html"><img src="dist/img/logo.png" alt="" class="w-[85px]"></a>
+                <a href="index.html" class="logo dark:hidden"><img src="dist/img/logo-light.png" alt="" class="w-[85px]"></a>
+                <a href="index.html" class="logo hidden dark:block"><img src="dist/img/logo.png" alt="" class="w-[85px]"></a>
             </div>
             <button class="hamburger px-4 py-3 lg:hidden" type="button">
                 <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
                 <span class="hamburger-line transition duration-300 ease-in-out"></span>
                 <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
             </button>
-            <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] border-white rounded-xl lg:static lg:block lg:border-0 bg-background lg:bg-transparent" data-barba-prevent="all">
+            <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] shadow-lg dark:border-white rounded-b-xl lg:static lg:block lg:border-0 bg-bgLight dark:bg-background dark:lg:bg-transparent lg:bg-transparent lg:shadow-none" data-barba-prevent="all">
                 <ul class="lg:flex gap-5 items-center">
-                    <a id="nav-items" href="#about"><li class="text-white text-base font-extralight mt-3 lg:mt-0">About</li></a>
-                    <a id="nav-items" href="#work"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Experience</li></a>
-                    <a id="nav-items" href="#built"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Work</li></a>
-                    <a id="nav-items" href="#contact"><li class="text-white text-base font-extralight mt-3 lg:mt-0">Contact</li></a>
-                    <a id="nav-items" href="dist/pdf/resume.pdf"><li class="text-primary font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-primary rounded hover:bg-primary hover:text-background hover:border-background transition duration-300 ease-in">Resume</li></a>
+                    <a id="nav-items" href="#about"><li class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">About</li></a>
+                    <a id="nav-items" href="#work"><li class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">Experience</li></a>
+                    <a id="nav-items" href="#built"><li class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">Work</li></a>
+                    <a id="nav-items" href="#contact"><li class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">Contact</li></a>
+                    <a id="nav-items" href="dist/pdf/resume.pdf"><li class="text-textLight dark:text-primary dark:font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-textLight dark:border-primary rounded hover:bg-textLight hover:text-bgLight dark:hover:bg-primary dark:hover:text-background hover:border-background transition duration-300 ease-in">Resume</li></a>
+                    <li class="ml-4 mt-4 lg:mt-0"><input type="checkbox" class="opacity-0 absolute top-0 group" id="toggleMode">
+                        <label for="toggleMode" class="w-[50px] h-[26px] bg-[#111] flex rounded-full items-center justify-between p-[5px] relative scale-150 cursor-pointe transition duration-300 ease-linear">
+                          <i class="fas fa-moon text-textLight"></i>
+                          <i class="fa-solid fa-sun text-bgLight text-sm"></i>
+                          <div class='ball w-5 h-5 bg-bgLight absolute t-[2px] l-[2px] rounded-full transition duration-200 ease-linear'>
+                        </label></li>
                 </ul>
             </nav>
         </div>
@@ -50,7 +58,7 @@
     <!-- project section start -->
     <section id="project" class="py-48">
         <div class="container mx-auto">
-            <h4 class="font-semibold text-white text-2xl lg:text-3xl text-center mb-8">Noteworthy Achievement</h4>
+            <h4 class="font-semibold text-textLight dark:text-white text-2xl lg:text-3xl text-center mb-8">Noteworthy Achievement</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 gap-10">
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -60,9 +68,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat_dicoding_javascript_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Javascript</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Javascript</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Dicoding Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -72,9 +80,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat_dicoding_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Web</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Dasar Pemrograman Web</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Dicoding Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -84,9 +92,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat_dicoding_pemula_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Membuat Front-End Web untuk Pemula</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Belajar Membuat Front-End Web untuk Pemula</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Dicoding Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -96,9 +104,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat_dicoding_dasarsoftware_page-0001.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Memulai Dasar Pemrograman untuk Menjadi Pengembang Software</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Dicoding Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">Memulai Dasar Pemrograman untuk Menjadi Pengembang Software</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Dicoding Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -108,9 +116,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/cert-1014-15096241.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">HTML Course</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">SoloLearn Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">HTML Course</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">SoloLearn Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -120,9 +128,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/cert-1023-15096241.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">CSS Course</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">SoloLearn Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">CSS Course</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">SoloLearn Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -132,9 +140,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat best student.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of "Software Engineering"</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of "Software Engineering"</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
                 </div>
                 <div class="w-full bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl">
                     <div class="flex justify-between mb-6">
@@ -144,9 +152,9 @@
                         </svg>
                     </div>
                     <img src="dist/img/achievement/sertifikat best student rpl.jpg" alt="" class=" transition duration-500 ease-in-out rounded-xl">
-                    <a href="" class="font-semibold text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of The Years "Software Engineering"</h4></a>
-                    <p class="text-base font-extralight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                    <p class="text-base text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
+                    <a href="" class="font-semibold text-bgLight dark:text-secondary hover:text-primary text-xl lg:text-2xl mt-6 mb-5 block transition duration-500 ease-in-out"><h4 class="">The First Best Student of The Years "Software Engineering"</h4></a>
+                    <p class="text-base font-extralight text-bgLight">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
+                    <p class="text-base text-bgLight dark:text-secondary mt-4">Pelita Nusantara Vocational Highschool Certificate</p>
                 </div>
             </div>
         </div>
@@ -156,7 +164,7 @@
     <!-- footer start -->
     <footer id="footer">
         <div class="container px-4 py-8 mx-auto">
-            <p class="font-extralight text-base text-secondary text-center">Designed by <a href="" class="text-white">Stephen Gachoka</a> Built by <a href="" class="text-white">Azkazikna Ageung Laksana</a></p>
+            <p class="dark:font-extralight text-base dark:text-bgLight dark:text-secondary text-center">Designed by <a href="" class="dark:text-white">Stephen Gachoka</a> Built by <a href="" class="dark:text-white">Azkazikna Ageung Laksana</a></p>
         </div>
     </footer>
     <!-- footer end -->
