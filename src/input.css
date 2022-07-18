@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.buttonAnimate::before{
+  transform-origin: 0 0;
+  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-500 ease-in-out;
+}
+
+.buttonAnimate2::before{
+  transform-origin: 0 0;
+  @apply content-[""] absolute left-0 top-0 w-full h-full bg-primary z-[-1] transition duration-500 ease-in-out;
+}
+
+.buttonAnimate::before, 
+.buttonAnimate2::before{
+  transform: scaleX(0);
+}
+
+.buttonAnimate:hover::before, 
+.buttonAnimate2:hover::before{
+  transform: scaleX(1);
+}
+
 .hamburger-line {
     @apply w-[30px] h-[2px] bg-textLight dark:bg-white block my-2;
 }

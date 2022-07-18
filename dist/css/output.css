@@ -820,10 +820,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -951,11 +947,6 @@ video {
 .bg-textLight {
   --tw-bg-opacity: 1;
   background-color: rgb(49 47 49 / var(--tw-bg-opacity));
-}
-
-.bg-project {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 34 64 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-70 {
@@ -1188,6 +1179,59 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+.buttonAnimate::before{
+  transform-origin: 0 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 47 49 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+.dark .buttonAnimate::before {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+}
+
+.buttonAnimate2::before{
+  transform-origin: 0 0;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 255 218 / var(--tw-bg-opacity));
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --tw-content: "";
+  content: var(--tw-content);
+}
+
+.buttonAnimate::before, 
+.buttonAnimate2::before{
+  transform: scaleX(0);
+}
+
+.buttonAnimate:hover::before, 
+.buttonAnimate2:hover::before{
+  transform: scaleX(1);
+}
+
 .hamburger-line {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -1334,14 +1378,14 @@ video {
   border-color: rgb(2 12 27 / var(--tw-border-opacity));
 }
 
-.hover\:bg-textLight:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(49 47 49 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-primaryLight:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(50 39 39 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-textLight:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(49 47 49 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-primary:hover {
@@ -1458,11 +1502,6 @@ video {
 .dark .dark\:text-background {
   --tw-text-opacity: 1;
   color: rgb(2 12 27 / var(--tw-text-opacity));
-}
-
-.dark .dark\:text-bgLight {
-  --tw-text-opacity: 1;
-  color: rgb(240 238 240 / var(--tw-text-opacity));
 }
 
 .dark .dark\:shadow-none {
