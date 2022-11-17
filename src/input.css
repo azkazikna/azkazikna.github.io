@@ -2,87 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-.buttonAnimate::before{
+.buttonAnimate::before {
   transform-origin: 0 0;
-  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-500 ease-in-out rounded-xl;
+  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-500 ease-in-out;
 }
 
-.buttonAnimate2::before{
+.buttonAnimate2::before {
   transform-origin: 0 0;
   @apply content-[""] absolute left-0 top-0 w-full h-full bg-primary z-[-1] transition duration-500 ease-in-out;
 }
 
-.buttonAnimate::before, 
-.buttonAnimate2::before{
+.buttonAnimate::before,
+.buttonAnimate2::before {
   transform: scaleX(0);
 }
 
-.buttonAnimate:hover::before, 
-.buttonAnimate2:hover::before{
+.buttonAnimate:hover::before,
+.buttonAnimate2:hover::before {
   transform: scaleX(1);
 }
 
 .hamburger-line {
-    @apply w-[30px] h-[2px] bg-textLight dark:bg-white block my-2;
+  @apply w-[30px] h-[2px] bg-textLight dark:bg-white block my-2;
 }
 
 .hamburger-active > span:nth-child(1) {
-    @apply rotate-45;
+  @apply rotate-45;
 }
 
 .hamburger-active > span:nth-child(2) {
-    @apply scale-0;
+  @apply scale-0;
 }
 
 .hamburger-active > span:nth-child(3) {
-    @apply -rotate-45;
+  @apply -rotate-45;
 }
 
 #work ul li {
-    @apply bg-[url('../img/arrow-light.png')] dark:bg-[url('../img/arrow.png')] bg-no-repeat pl-7 mb-2;
+  @apply bg-[url('../img/arrow-light.png')] dark:bg-[url('../img/arrow.png')] bg-no-repeat pl-7 mb-2;
 }
 #work .mytabs .tab {
-    display: none;
+  display: none;
 }
 
-#work input[type='radio']:checked + label {
-    @apply border-l-2 border-textLight dark:border-primary bg-textLight dark:bg-primary bg-opacity-20 dark:bg-opacity-20;
+#work input[type="radio"]:checked + label {
+  @apply border-l-2 border-textLight dark:border-primary bg-textLight dark:bg-primary bg-opacity-20 dark:bg-opacity-20;
 }
 
 .text {
-    @apply hidden;
+  @apply hidden;
 }
 
-#toggleMode:checked + label{
-  background-color: #F0EEF0!important;
+#toggleMode:checked + label {
+  background-color: #f0eef0 !important;
 }
 
-#toggleMode:checked + label .ball{
+#toggleMode:checked + label .ball {
   transform: translateX(20px);
-  background-color: #020C1B;
+  background-color: #020c1b;
 }
 
 .loading-screen {
-    @apply relative pl-0 pr-0 pt-0 bg-textLight dark:bg-primary w-0 h-full;
+  @apply relative pl-0 pr-0 pt-0 bg-textLight dark:bg-primary w-0 h-full;
 }
 
 .load-container {
-    @apply fixed top-0 left-0 w-full h-[100vh] overflow-hidden z-[999999] pointer-events-none;
+  @apply fixed top-0 left-0 w-full h-[100vh] overflow-hidden z-[999999] pointer-events-none;
 }
 
 .spinner-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 999999;
-    pointer-events: none;
-    background-color: #020C1B;
-    transition: 1s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 999999;
+  pointer-events: none;
+  background-color: #020c1b;
+  transition: 1s;
 }
 
 .spinner {
-    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }

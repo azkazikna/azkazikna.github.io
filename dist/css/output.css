@@ -1179,7 +1179,7 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
-.buttonAnimate::before{
+.buttonAnimate::before {
   transform-origin: 0 0;
   position: absolute;
   left: 0px;
@@ -1187,7 +1187,6 @@ video {
   z-index: -1;
   height: 100%;
   width: 100%;
-  border-radius: 0.75rem;
   --tw-bg-opacity: 1;
   background-color: rgb(49 47 49 / var(--tw-bg-opacity));
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
@@ -1204,7 +1203,7 @@ video {
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
 }
 
-.buttonAnimate2::before{
+.buttonAnimate2::before {
   transform-origin: 0 0;
   position: absolute;
   left: 0px;
@@ -1223,13 +1222,13 @@ video {
   content: var(--tw-content);
 }
 
-.buttonAnimate::before, 
-.buttonAnimate2::before{
+.buttonAnimate::before,
+.buttonAnimate2::before {
   transform: scaleX(0);
 }
 
-.buttonAnimate:hover::before, 
-.buttonAnimate2:hover::before{
+.buttonAnimate:hover::before,
+.buttonAnimate2:hover::before {
   transform: scaleX(1);
 }
 
@@ -1279,7 +1278,7 @@ video {
   display: none;
 }
 
-#work input[type='radio']:checked + label {
+#work input[type="radio"]:checked + label {
   border-left-width: 2px;
   --tw-border-opacity: 1;
   border-color: rgb(49 47 49 / var(--tw-border-opacity));
@@ -1287,7 +1286,7 @@ video {
   --tw-bg-opacity: 0.2;
 }
 
-.dark #work input[type='radio']:checked + label {
+.dark #work input[type="radio"]:checked + label {
   --tw-border-opacity: 1;
   border-color: rgb(100 255 218 / var(--tw-border-opacity));
   background-color: rgb(100 255 218 / var(--tw-bg-opacity));
@@ -1298,13 +1297,13 @@ video {
   display: none;
 }
 
-#toggleMode:checked + label{
-  background-color: #F0EEF0!important;
+#toggleMode:checked + label {
+  background-color: #f0eef0 !important;
 }
 
-#toggleMode:checked + label .ball{
+#toggleMode:checked + label .ball {
   transform: translateX(20px);
-  background-color: #020C1B;
+  background-color: #020c1b;
 }
 
 .loading-screen {
@@ -1343,7 +1342,7 @@ video {
   overflow: hidden;
   z-index: 999999;
   pointer-events: none;
-  background-color: #020C1B;
+  background-color: #020c1b;
   transition: 1s;
 }
 
@@ -1565,6 +1564,10 @@ video {
 
   .lg\:mt-0 {
     margin-top: 0px;
+  }
+
+  .lg\:mt-2 {
+    margin-top: 0.5rem;
   }
 
   .lg\:mb-20 {

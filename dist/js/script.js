@@ -1,14 +1,3 @@
-// loading
-function loading() {
-    setTimeout(() => {
-        const spinnerWrapper = document.querySelector('.spinner-wrapper');
-        spinnerWrapper.style.top = '-100vh';
-        contentAnimationStart();
-    }, 2000)
-};
-
-loading();
-
 // dark mode toggle
 const html = document.querySelector('html');
 const logo = document.querySelector('.logo');
@@ -215,6 +204,6 @@ gsap.from(".animate-paragraf", {
         toggleActions: "play none none none"
     },
     opacity: 0,
-    delay: 3,
+    delay: 1,
     duration:3
 })
