@@ -828,12 +828,24 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1104,6 +1116,10 @@ video {
 
 .font-extralight {
   font-weight: 200;
+}
+
+.font-light {
+  font-weight: 300;
 }
 
 .text-textLight {
@@ -1620,6 +1636,10 @@ video {
 
   .lg\:grow-\[5\] {
     flex-grow: 5;
+  }
+
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .lg\:grid-cols-3 {

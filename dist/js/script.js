@@ -111,37 +111,37 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-var scroll = new LocomotiveScroll({
-    el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
-});
+// var scroll = new LocomotiveScroll({
+//     el: document.querySelector('[data-scroll-container]'),
+//     smooth: true,
+// });
 
-// On scroll
-scroll.on( 'scroll', ( instance ) => {
+// // On scroll
+// scroll.on( 'scroll', ( instance ) => {
 
-    // Sync positioning with GSAP ScrollTrigger
-    ScrollTrigger.update();
+//     // Sync positioning with GSAP ScrollTrigger
+//     ScrollTrigger.update();
 
-    // Add direction to DOM
-    document.documentElement.setAttribute( 'data-scrolling', instance.direction );
+//     // Add direction to DOM
+//     document.documentElement.setAttribute( 'data-scrolling', instance.direction );
 
-} );
+// } );
 
 // Tell ScrollTrigger to use these proxy methods
-ScrollTrigger.scrollerProxy( '[data-scroll-container]', {
-    scrollTop( value ) {
-        return arguments.length ? scroll.scrollTo( value, 0, 0 ) : scroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
-    pinType: document.querySelector( '[data-scroll-container]' ).style.transform ? "transform" : "fixed"
-} );
+// ScrollTrigger.scrollerProxy( '[data-scroll-container]', {
+//     scrollTop( value ) {
+//         return arguments.length ? scroll.scrollTo( value, 0, 0 ) : scroll.scroll.instance.scroll.y;
+//     },
+//     getBoundingClientRect() {
+//         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+//     },
+//     pinType: document.querySelector( '[data-scroll-container]' ).style.transform ? "transform" : "fixed"
+// } );
 
 // Set ScrollTrigger defaults
-ScrollTrigger.defaults( {
-    scroller: '[data-scroll-container]'
-} );
+// ScrollTrigger.defaults( {
+//     scroller: '[data-scroll-container]'
+// } );
 
 function work() {
     const wezaButton = document.getElementById('tabweza');
@@ -204,6 +204,6 @@ gsap.from(".animate-paragraf", {
         toggleActions: "play none none none"
     },
     opacity: 0,
-    delay: 1,
-    duration:3
+    delay: 0.5,
+    duration:2
 })
