@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
 .buttonAnimate::before {
   transform-origin: 0 0;
   @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-500 ease-in-out;
