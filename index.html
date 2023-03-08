@@ -18,16 +18,20 @@
 </head>
 
 <body class="dark:bg-background font-poppins dark:text-white text-textLight bg-bgLight" data-barba="wrapper">
-    <!-- loading start -->
-    <div class="load-container">
-        <div class="loading-screen"></div>
-    </div>
-    <!-- loading end -->
     <div data-scroll-container>
+        <!-- loading start -->
+        <div class="load-container">
+            <div class="loading-screen"></div>
+        </div>
+        <div id="preloader">
+            <div class="p">LOADING</div>
+        </div>
+        <!-- loading end -->
+
 
         <!-- header start -->
         <header
-            class="fixed top-0 w-full flex justify-center transition duration-300 ease-linear z-[99999] bg-[#F0EEF0] dark:bg-background bg-opacity-70 dark:bg-opacity-70 dark:backdrop-blur-sm backdrop-blur-sm border-b-[0.2px]  border-textLight dark:border-white border-opacity-20 dark:border-opacity-20">
+            class="fixed top-0 w-full flex justify-center transition duration-300 ease-linear z-[99] bg-[#F0EEF0] dark:bg-background bg-opacity-70 dark:bg-opacity-70 dark:backdrop-blur-sm backdrop-blur-sm border-b-[0.2px]  border-textLight dark:border-white border-opacity-20 dark:border-opacity-20">
             <div class="container flex justify-between items-center px-3 py-2">
                 <div class="px-4 py-3">
                     <a href="index.html" class="logo dark:hidden"><img src="dist/img/logo-light.png"
@@ -43,31 +47,34 @@
                 <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] shadow-lg dark:border-white rounded-b-xl lg:static lg:block lg:border-0 bg-bgLight dark:bg-background dark:border-opacity-20 dark:lg:bg-transparent lg:bg-transparent lg:shadow-none"
                     data-barba-prevent="all">
                     <ul class="lg:flex gap-5 items-center">
-                        <a id="nav-items" href="#about">
-                            <li
+                        <li>
+                            <a id="nav-items" href="#about"
+                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">About
+                            </a>
+                        </li>
+                        <li>
+                            <a id="nav-items" href="#work"
                                 class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
-                                About</li>
-                        </a>
-                        <a id="nav-items" href="#work">
-                            <li
+                                Experience
+                            </a>
+                        </li>
+                        <li>
+                            <a id="nav-items" href="#built"
                                 class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
-                                Experience</li>
-                        </a>
-                        <a id="nav-items" href="#built">
-                            <li
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
-                                Work</li>
-                        </a>
-                        <a id="nav-items" href="#contact">
-                            <li
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
-                                Contact</li>
-                        </a>
-                        <a id="nav-items" href="dist/pdf/resume.pdf">
-                            <li
-                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-textLight dark:border-primary rounded hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in ">
-                                Resume</li>
-                        </a>
+                                Work
+                            </a>
+                        </li>
+                        <li>
+                            <a id="nav-items" href="#contact"
+                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a id="nav-items" href="dist/pdf/resume.pdf"
+                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-textLight dark:border-primary rounded hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">
+                                Resume
+                            </a>
+                        </li>
                         <li class="ml-4 mt-4 lg:mt-2">
                             <input type="checkbox" class="opacity-0 absolute top-0 group" id="toggleMode">
                             <label for="toggleMode"
@@ -222,7 +229,7 @@
             <!-- About me section end-->
 
             <!-- work section start -->
-            <section id="work" class="pb-96 lg:pb-48">
+            <section id="work" class="pb-[420px] lg:pb-48">
                 <div class="container lg:w-[60%] mx-auto px-4">
                     <div class="w-full flex items-center gap-5">
                         <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl grow-[1]">Where I have worked</h4>
@@ -233,8 +240,7 @@
                     <div class="w-full lg:w-1/2">
                         <input type="radio" id="tabweza" name="mytabs" class="hidden" checked="checked">
                         <label for="tabweza"
-                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Weza
-                            Prosoft Ltd</label>
+                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Freelance</label>
                         <input type="radio" id="tabryanada" name="mytabs" class="hidden">
                         <label for="tabryanada"
                             class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Ryanada
@@ -245,21 +251,24 @@
                             New Hope Foundation</label>
                         <input type="radio" id="tabellysoft" name="mytabs" class="hidden">
                         <label for="tabellysoft"
-                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Ellysoft
-                            inc</label>
+                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Internship
+                            in JGU</label>
                     </div>
                     <div class="text-content relative w-full mt-10 lg:mt-0">
                         <div class="weza text absolute">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Software Engineer <span
-                                    class="text-project dark:text-primary">@WezaProsoft</span></h4>
-                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2020 - Present</h5>
+                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Fullstack Web Developer <span
+                                    class="text-project dark:text-primary">@Freelance</span></h4>
+                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jun 2021 - Present</h5>
                             <ul class="mt-7">
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
+                                <li><span class="relative -top-[5px]">Create a news website "Youth of the Nation" using
+                                        Wordpress.</span></li>
+                                <li><span class="relative -top-[5px]">Create a Laboratory Information Management System
+                                        (LIMS) for Delta Indonesia Lab company.</span></li>
+                                <li><span class="relative -top-[5px]">Create a web-based "Found and Lost" application,
+                                        which is a website like social media to post found/lost items.</li>
+                                <li><span class="relative -top-[5px]">Create a web-based "Command Control Center Polsek
+                                        Cibarusah" application, an application used by the Cibarusah police to
+                                        facilitate community services.</li>
                             </ul>
                         </div>
                         <div class="ryanada text absolute">
@@ -276,8 +285,8 @@
                             </ul>
                         </div>
                         <div class="destiny text absolute">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Software Engineer <span
-                                    class="text-project dark:text-primary">@DestinyNewHope</span></h4>
+                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Web Developer <span
+                                    class="text-project dark:text-primary">@Freelance</span></h4>
                             <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2020 - Present</h5>
                             <ul class="mt-7">
                                 <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
@@ -289,16 +298,22 @@
                             </ul>
                         </div>
                         <div class="ellysoft text absolute">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Software Engineer <span
-                                    class="text-project dark:text-primary">@Ellysoft</span></h4>
-                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2020 - Present</h5>
+                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Web Developer <span
+                                    class="text-project dark:text-primary">@Jakarta Global University</span></h4>
+                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2021 - August 2021</h5>
                             <ul class="mt-7">
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
+                                <li>Create a landing page for informatics engineering
+                                    majors.</li>
+                                <li>Handling bugs in web applications.</li>
+                                <li>Make a project about lecturer scheduling by
+                                    implementing the
+                                    software development life cycle.</li>
+                                <li>Create a lecturer workload application project by
+                                    collaborating with
+                                    the team.</li>
+                                <li>Take responsibility for making project about
+                                    transcript
+                                    printing application.</li>
                             </ul>
                         </div>
                     </div>
@@ -673,18 +688,16 @@
                                 </svg>
                             </div>
                             <div class="overflow-hidden rounded-xl">
-                                <img src="dist/img/achievement/sertifikat_dicoding_javascript_page-0001.webp"
-                                    alt="Sertifikat Dicoding Javascript"
+                                <img src="dist/img/achievement/peserta_terbaik.png" alt="Sertifikat Dicoding Javascript"
                                     class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
                             </div>
                             <a href="#"
                                 class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">Belajar Dasar Pemrograman Javascript</h4>
+                                <h4 class="">Best Participant of DTS VSGA Program Online Training in 2022</h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Lorem
-                                ipsum,
-                                dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                            <p class="text-base dark:text-secondary mt-4 text-bgLight">Dicoding Certificate</p>
+                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Being
+                                the participant with the most points in "Politeknik Negeri Jambi" </p>
+                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">VSGA DTS</p>
                         </div>
                         <div
                             class="w-full bg-textLight dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl shadow-lg dark:shadow-none">
@@ -697,18 +710,19 @@
                                 </svg>
                             </div>
                             <div class="overflow-hidden rounded-xl">
-                                <img src="dist/img/achievement/sertifikat_dicoding_page-0001.webp"
-                                    alt="Sertifikat Dicoding"
+                                <img src="dist/img/achievement/sertifikat best student.webp" alt="Pelita Nusantara Vocational
+                                    Highschool Certificate"
                                     class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
                             </div>
                             <a href="#"
                                 class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">Belajar Dasar Pemrograman Web</h4>
+                                <h4 class="">The First Best Student of "Software Engineering"</h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Lorem
-                                ipsum,
-                                dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                            <p class="text-base dark:text-secondary mt-4 text-bgLight">Dicoding Certificate</p>
+                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Became
+                                the first-ranked person in Software Engineering 1 class </p>
+                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">Pelita Nusantara
+                                Vocational
+                                Highschool Certificate</p>
                         </div>
                         <div
                             class="w-full bg-textLight dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group rounded-xl shadow-lg dark:shadow-none">
@@ -721,18 +735,19 @@
                                 </svg>
                             </div>
                             <div class="overflow-hidden rounded-xl">
-                                <img src="dist/img/achievement/sertifikat_dicoding_pemula_page-0001.webp"
-                                    alt="Sertifikat Dicoding Pemula"
+                                <img src="dist/img/achievement/sertifikat best student rpl.webp" alt="Pelita Nusantara Vocational
+                                    Highschool Certificate"
                                     class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
                             </div>
                             <a href="#"
                                 class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">Belajar Membuat Front-End Web untuk Pemula</h4>
+                                <h4 class="">The First Best Student of The Years "Software Engineering</h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Lorem
-                                ipsum,
-                                dolor sit amet consectetur adipisicing elit. Expedita, ducimus!</p>
-                            <p class="text-base dark:text-secondary mt-4 text-bgLight">Dicoding Certificate</p>
+                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Became
+                                the first-ranked person in the Software Engineering department</p>
+                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">Pelita Nusantara
+                                Vocational
+                                Highschool Certificate</p>
                         </div>
                     </div>
                     <a href="achievement.html"
@@ -770,6 +785,8 @@
     </div>
     <!-- to top -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <script src="dist/js/jquery.bez.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdn.jsdelivr.net/npm/@barba/prefetch@2.1.10/dist/barba-prefetch.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>

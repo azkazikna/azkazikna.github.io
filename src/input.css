@@ -49,6 +49,14 @@
   @apply border-l-2 border-textLight dark:border-primary bg-textLight dark:bg-primary bg-opacity-20 dark:bg-opacity-20;
 }
 
+.loading-screen {
+  @apply relative pl-0 pr-0 pt-0 bg-textLight dark:bg-primary w-0 h-full;
+}
+
+.load-container {
+  @apply fixed top-0 left-0 w-full h-[100vh] overflow-hidden z-[999999] pointer-events-none;
+}
+
 .text {
   @apply hidden;
 }
@@ -62,27 +70,22 @@
   background-color: #020c1b;
 }
 
-.loading-screen {
-  @apply relative pl-0 pr-0 pt-0 bg-textLight dark:bg-primary w-0 h-full;
+.pace {
+  @apply pointer-events-none select-none z-[9999999] fixed m-auto top-0 left-0 right-0 bottom-0 w-[400px] border-none h-[1px] overflow-hidden bg-[#1b1b1b];
 }
 
-.load-container {
-  @apply fixed top-0 left-0 w-full h-[100vh] overflow-hidden z-[999999] pointer-events-none;
+.pace .pace-progress {
+  @apply box-border max-w-[400px] absolute z-[999999999] block top-0 right-full h-full w-full bg-white;
 }
 
-.spinner-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  z-index: 999999;
-  pointer-events: none;
-  background-color: #020c1b;
-  transition: 1s;
+.pace.pace-inactive {
+  @apply hidden;
 }
 
-.spinner {
-  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+#preloader {
+  @apply w-full h-[100vh] bg-[#101010] overflow-hidden fixed ease-bez-loading z-[99999];
+}
+
+.p {
+  @apply absolute top-[40%] left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-lg lg:text-xl;
 }
