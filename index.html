@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="dist/img/icon.png">
     <title>Portfolio | Azkazikna</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/output.css">
     <link rel="stylesheet" href="dist/css/locomotive.css">
     <link rel="stylesheet" href="dist/css/swiper.css">
@@ -23,9 +24,9 @@
         <div class="load-container">
             <div class="loading-screen"></div>
         </div>
-        <div id="preloader">
+        <!-- <div id="preloader">
             <div class="p">LOADING</div>
-        </div>
+        </div> -->
         <!-- loading end -->
 
 
@@ -47,35 +48,35 @@
                 <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] shadow-lg dark:border-white rounded-b-xl lg:static lg:block lg:border-0 bg-bgLight dark:bg-background dark:border-opacity-20 dark:lg:bg-transparent lg:bg-transparent lg:shadow-none"
                     data-barba-prevent="all">
                     <ul class="lg:flex gap-5 items-center">
-                        <li>
-                            <a id="nav-items" href="#about"
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">About
+                        <li
+                            class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                            <a id="nav-items" href="#about">About
                             </a>
                         </li>
-                        <li>
-                            <a id="nav-items" href="#work"
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                        <li
+                            class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                            <a id="nav-items" href="#work">
                                 Experience
                             </a>
                         </li>
-                        <li>
-                            <a id="nav-items" href="#built"
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                        <li
+                            class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                            <a id="nav-items" href="#built">
                                 Work
                             </a>
                         </li>
-                        <li>
-                            <a id="nav-items" href="#contact"
-                                class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">Contact
+                        <li
+                            class="text-textLight dark:text-white text-base dark:font-extralight mt-3 hover:scale-105 transition duration-300 ease-linear lg:mt-0">
+                            <a id="nav-items" href="#contact">Contact
                             </a>
                         </li>
-                        <li>
+                        <li class="mt-3 lg:mt-0">
                             <a id="nav-items" href="dist/pdf/resume.pdf"
-                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight mt-3 lg:mt-0 py-2 px-2 border-[1px] border-textLight dark:border-primary rounded hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">
+                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight border-[1px] py-2 px-2 border-textLight dark:border-primary rounded hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">
                                 Resume
                             </a>
                         </li>
-                        <li class="ml-4 mt-4 lg:mt-2">
+                        <li class="ml-4 mt-6 lg:mt-0">
                             <input type="checkbox" class="opacity-0 absolute top-0 group" id="toggleMode">
                             <label for="toggleMode"
                                 class="w-[50px] h-[26px] bg-[#111] flex rounded-full items-center justify-between p-[5px] relative scale-150 cursor-pointe transition duration-300 ease-linear cursor-pointer">
@@ -105,7 +106,9 @@
                             I create solutions from coding.</h1>
                         <p
                             class="text-base dark:text-secondary text-textLight lg:w-1/2 mb-9 animate-this2 overflow-hidden">
-                            I am a <span class="font-semibold">Fullstack Web Developer</span> from Bogor,
+                            I am a <a href="#" class="font-semibold" data-popover-target="popover-fullstack">Fullstack
+                                Web
+                                Developer</a> from Bogor,
                             Indonesia. I enjoy coding logic and structure
                             and always strive to write elegant and efficient code, whether it is HTML, CSS or JS. I have
                             designed
@@ -194,11 +197,12 @@
                             <span class="w-1/2 h-[1px] bg-textLight dark:bg-white block lg:w-3/4"></span>
                         </div>
                         <p class="mt-14 mb-7 dark:text-secondary animate-paragraf">
-                            I studied Software Engineering for 3 years and am now studying Informatics Engineering.
-                            Therefore, I gained knowledge and experience in creating websites there.
+                            I am a graduate of Vocational Highschool majoring in Software Engineering and have an
+                            interest in web development and UI/UX design. Studying web development for 3 years has given
+                            me a lot of flying hours in terms of coding but it doesn't make me feel satisfied.
                             <br><br>
-                            Now I am exploring Laravel for the needs of future clients, if you want to buy my services,
-                            you can contact my Instagram.
+                            Now I'm exploring the PHP framework, Laravel. As a Programmer/Developer I will continue to
+                            hone and improve my skills in any case whether it's problem-solving, etc.
                             <br><br>
                             Here are a few technologies I’ve been working with recently:
                         </p>
@@ -229,7 +233,7 @@
             <!-- About me section end-->
 
             <!-- work section start -->
-            <section id="work" class="pb-[420px] lg:pb-48">
+            <section id="work" class="pb-16 lg:pb-12">
                 <div class="container lg:w-[60%] mx-auto px-4">
                     <div class="w-full flex items-center gap-5">
                         <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl grow-[1]">Where I have worked</h4>
@@ -241,21 +245,13 @@
                         <input type="radio" id="tabweza" name="mytabs" class="hidden" checked="checked">
                         <label for="tabweza"
                             class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Freelance</label>
-                        <input type="radio" id="tabryanada" name="mytabs" class="hidden">
-                        <label for="tabryanada"
-                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Ryanada
-                            Limited</label>
-                        <input type="radio" id="tabdestiny" name="mytabs" class="hidden">
-                        <label for="tabdestiny"
-                            class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Destiny
-                            New Hope Foundation</label>
                         <input type="radio" id="tabellysoft" name="mytabs" class="hidden">
                         <label for="tabellysoft"
                             class="text-base dark:font-extralight dark:text-secondary px-4 py-3 border-l-[1px] border-secondary hover:bg-primaryLight dark:hover:bg-primary hover:bg-opacity-20 dark:hover:bg-opacity-20 block transition duration-300 ease-in cursor-pointer">Internship
                             in JGU</label>
                     </div>
-                    <div class="text-content relative w-full mt-10 lg:mt-0">
-                        <div class="weza text absolute">
+                    <div class="text-content relative mt-10 lg:mt-0 overflow-auto w-full">
+                        <div class="weza text">
                             <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Fullstack Web Developer <span
                                     class="text-project dark:text-primary">@Freelance</span></h4>
                             <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jun 2021 - Present</h5>
@@ -271,33 +267,7 @@
                                         facilitate community services.</li>
                             </ul>
                         </div>
-                        <div class="ryanada text absolute">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Software Engineer <span
-                                    class="text-project dark:text-primary">@RyanadaLimited</span></h4>
-                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2020 - Present</h5>
-                            <ul class="mt-7">
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                            </ul>
-                        </div>
-                        <div class="destiny text absolute">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Web Developer <span
-                                    class="text-project dark:text-primary">@Freelance</span></h4>
-                            <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2020 - Present</h5>
-                            <ul class="mt-7">
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                                <li><span class="relative -top-[5px]">Write modern, performant, maintainable code for a
-                                        diverse array of client and internal projects</span></li>
-                            </ul>
-                        </div>
-                        <div class="ellysoft text absolute">
+                        <div class="ellysoft text">
                             <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Web Developer <span
                                     class="text-project dark:text-primary">@Jakarta Global University</span></h4>
                             <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2021 - August 2021</h5>
@@ -331,330 +301,325 @@
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="rounded-xl overflow-hidden swiper-slide">
-                                <img src="dist/img/project/lsp.webp" alt="Web LSP" class="">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                                <div class="overflow-hidden">
+                                    <img src="dist/img/project/lsp.webp" alt="Web LSP"
+                                        class="group-hover:rotate-[4deg] group-hover:scale-[1.15] transition duration-500">
+                                </div>
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary mb-4">
-                                        Online Professional Certification Registration</h5>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">CodeIgniter</p>
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                        Professional Certification Registration</h5>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Registration App – Fullstack • 2021</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-ci">
+                                        <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-bs">
+                                        <img src="dist/img/icon/gsap-greensock.svg" alt="GSAP"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-gsap">
+                                        <img src="dist/img/icon/phpmailer-1.svg" alt="PHPMailer"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-mailer">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    class="text-white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
-                                <img src="dist/img/project/evoting.webp" alt="Web Evoting" class="">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                                <img src="dist/img/project/lostandfound.svg" alt="Lost and Found" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
-                                        E-Voting PENUS</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">CodeIgniter</p>
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                        Lost and Found</h5>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Social Media App – Fullstack • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-ci">
+                                        <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-bs">
+                                        <img src="dist/img/icon/phpmailer-1.svg" alt="PHPMailer"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-mailer">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/libraryJGU.webp" alt="Library JGU" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         Library JGU</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">PHP</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        E-Library App – Fullstack • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-ci">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
+                                        <img src="dist/img/icon/gsap-greensock.svg" alt="GSAP"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-gsap">
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                                <img src="dist/img/project/evoting.webp" alt="Web Evoting" class="">
+                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                        E-Voting PENUS</h5>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        E-Voting App – Fullstack • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-ci">
+                                        <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-bs">
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
+                                        </a>
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
+                                            Preview</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/portfolio-tailwind.webp" alt="Portfolio Tailwind" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         Personal Portfolio Website</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Tailwindcss</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Portfolio – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
-                                        <a href="https://azkazikna.github.io/portfolio-tailwind/" target="_blank"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/web3.webp" alt="Web 3 Tailwind" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">Web3
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                        Web3
                                         Landing Page</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Tailwindcss</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
-                                        <a href="https://azkazikna.github.io/web3-tailwind/" target="_blank"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/real-estate.webp" alt="Web Real Estate" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">Real
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                        Real
                                         Estate Landing Page</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Tailwindcss</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
-                                        <a href="https://azkazikna.github.io/real-estate/" target="_blank"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/foodhub.webp" alt="Web FoodHub" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         FoodHub Landing Page</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Tailwindcss</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
-                                        <a href="https://azkazikna.github.io/foodhub/" target="_blank"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/surviveweb.webp" alt="Web Survive Theme" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         Survive Adventure Landing Page</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Bootstrap</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-bs">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/lsp_landing.webp" alt="Web LSP Wordpress" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary mb-4">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-4">
                                         Institute for Certification of Competencies Landing Page</h5>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Wordpress</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/wordpress-blue.svg" alt="Wordpress"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-wp">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/abkd.webp" alt="Web Aplikasi Beban Kerja Dosen" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         Lecturer's Workload Application</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">CodeIgniter</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Information System App – Fullstack • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-ci">
+                                        <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-bs">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
                                         <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide">
+                            <div class="rounded-xl overflow-hidden swiper-slide group">
                                 <img src="dist/img/project/haidoc.webp" alt="HaiDoc Web" class="">
                                 <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-xl lg:text-2xl text-bgLight dark:text-secondary">
+                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
                                         HaiDoc Landing Page</h5>
-                                    <br><br>
-                                    <div class="flex items-center gap-2 mb-6">
-                                        <svg width="24" height="30" viewBox="0 0 24 30" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M19 4.52515H5C3.897 4.52515 3 5.60284 3 6.92802V23.7482C3 25.0734 3.897 26.151 5 26.151H19C20.103 26.151 21 25.0734 21 23.7482V6.92802C21 5.60284 20.103 4.52515 19 4.52515ZM19 6.92802L19.001 11.7338H5V6.92802H19ZM5 14.1367H13V23.7482H5V14.1367ZM15 23.7482V14.1367H19.001L19.002 23.7482H15Z"
-                                                fill="#64FFDA" />
-                                        </svg>
-                                        <p class="text-bgLight">Tailwindcss</p>
+                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                        Landing Page – Frontend • 2022</h6>
+                                    <div class="flex items-center gap-3 mb-6">
+                                        <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-tailwind">
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                     <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight">View Code
-                                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg" class="inline-block ml-2">
-                                                <path
-                                                    d="M21 12L21.3536 11.6464L21.7071 12L21.3536 12.3536L21 12ZM1 12.5C0.723858 12.5 0.5 12.2761 0.5 12C0.5 11.7239 0.723858 11.5 1 11.5V12.5ZM17.3536 7.64645L21.3536 11.6464L20.6464 12.3536L16.6464 8.35355L17.3536 7.64645ZM21.3536 12.3536L17.3536 16.3536L16.6464 15.6464L20.6464 11.6464L21.3536 12.3536ZM21 12.5H1V11.5H21V12.5Z"
-                                                    fill="white" />
-                                            </svg>
+                                        <a href="#" class="text-bgLight text-sm lg:text-base">
+                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
+                                                class="inline-block ml-2">
                                         </a>
-                                        <a href="https://azkazikna.github.io/haidoc/"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out">Live
+                                        <a href="#"
+                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
                                             Preview</a>
                                     </div>
                                 </div>
@@ -782,18 +747,101 @@
                 </div>
             </footer>
             <!-- footer end -->
+
+            <!-- Tooltip Start -->
+
+            <!-- Fullstack Developer -->
+            <div data-popover id="popover-fullstack" role="tooltip"
+                class="absolute z-10 invisible inline-block text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-96 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 overflow-hidden">
+                <div class="grid grid-cols-5">
+                    <div class="col-span-3 p-3">
+                        <div class="space-y-2">
+                            <h3 class="font-semibold text-gray-900 dark:text-white">About Fullstack Web Developer</h3>
+                            <p>A full-stack developer is a developer or engineer who can build both the front end and
+                                the back end of a website.</p>
+                            <a href="https://www.coursera.org/articles/full-stack-developer"
+                                class="flex items-center font-medium text-blue-600 dark:text-blue-500 dark:hover:text-blue-600 hover:text-blue-700">Read
+                                more <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor"
+                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                    <img src="https://builtin.com/sites/www.builtin.com/files/styles/og/public/full-stack-developer.jpg"
+                        class="h-full col-span-2 object-cover" alt="Fullstack Web Developer Illustration" />
+                </div>
+                <div data-popper-arrow></div>
+            </div>
+            <!-- Code Igniter -->
+            <div id="tooltip-ci" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                Codeigniter
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- Bootstrap -->
+            <div id="tooltip-bs" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                Bootstrap
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- Tailwind -->
+            <div id="tooltip-tailwind" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                Tailwind
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- Wordpress -->
+            <div id="tooltip-wp" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                Wordpress
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- PHP -->
+            <div id="tooltip-php" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                PHP
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- GSAP -->
+            <div id="tooltip-gsap" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                GSAP
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- PHPMailer -->
+            <div id="tooltip-mailer" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                PHPMailer
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- Figma -->
+            <div id="tooltip-figma" role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-xs text-black bg-white rounded-lg shadow-sm opacity-0 tooltip">
+                Figma
+                <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
+            <!-- Tooltip End -->
         </main>
     </div>
     <!-- to top -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Pace JS (Loading) -->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <script src="dist/js/jquery.bez.js"></script>
+    <!-- Flowbite (Component) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <!-- Barba JS (Transition) -->
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://cdn.jsdelivr.net/npm/@barba/prefetch@2.1.10/dist/barba-prefetch.umd.min.js"></script>
+    <!-- GSAP (Animation) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- Locomotive Scroll (Smooth Scroll) -->
     <script src="dist/js/locomotive.js"></script>
+    <!-- Custom JS -->
     <script src="dist/js/script.js"></script>
     <script src="dist/js/transition.js"></script>
 </body>
