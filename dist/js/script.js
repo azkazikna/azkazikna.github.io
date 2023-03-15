@@ -7,19 +7,19 @@ toggleMode.addEventListener('change', ()=>{
   html.classList.toggle('dark');
 })
 
-// //animation loading
-// paceOptions = {
-//     ajax: true,
-//     document: true,
-//     eventLag: false
-// };
+//animation loading
+paceOptions = {
+    ajax: true,
+    document: true,
+    eventLag: false
+};
 
-// Pace.on('done', function() {
-//     $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
-//     $.bez([0.19, 1, 0.22, 1]));
+Pace.on('done', function() {
+    $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
+    $.bez([0.19, 1, 0.22, 1]));
 
-//     $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
-// });
+    $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
+});
 
 // animation transition
 function delay(n) {
@@ -93,9 +93,9 @@ const swiper = new Swiper('.swiper', {
     spaceBetween: 30,
     grabCursor: true,
     autoHeight: true,
-    // autoplay: {
-    //     delay: 3000
-    // },
+    autoplay: {
+        delay: 3000
+    },
     breakpoints: {
         // when window width is >= 320px
         320: {
@@ -124,49 +124,49 @@ const swiper = new Swiper('.swiper', {
     },
 });
 
-// var scroll = new LocomotiveScroll({
-//     el: document.querySelector('[data-scroll-container]'),
-//     smooth: true,
-//     mobile: {
-//         smooth: true,
-//         breakpoint: 0,    // <---- Fixes The Issue 🎉
-//         getDirection: true,
-//     },
-//     tablet: {
-//         smooth: true,
-//         breakpoint: 0,    // <---- Fixes The Issue 🎉
-//         getDirection: true,
-//     }
-// });
+var scroll = new LocomotiveScroll({
+    el: document.querySelector('[data-scroll-container]'),
+    smooth: true,
+    mobile: {
+        smooth: true,
+        breakpoint: 0,    // <---- Fixes The Issue 🎉
+        getDirection: true,
+    },
+    tablet: {
+        smooth: true,
+        breakpoint: 0,    // <---- Fixes The Issue 🎉
+        getDirection: true,
+    }
+});
 
-// ScrollTrigger.config({ignoreMobileResize: true});
+ScrollTrigger.config({ignoreMobileResize: true});
 
-// // // On scroll
-// scroll.on( 'scroll', ( instance ) => {
+// // On scroll
+scroll.on( 'scroll', ( instance ) => {
 
-//     // Sync positioning with GSAP ScrollTrigger
-//     ScrollTrigger.update();
+    // Sync positioning with GSAP ScrollTrigger
+    ScrollTrigger.update();
 
-//     // Add direction to DOM
-//     document.documentElement.setAttribute( 'data-scrolling', instance.direction );
+    // Add direction to DOM
+    document.documentElement.setAttribute( 'data-scrolling', instance.direction );
 
-// } );
+} );
 
-// // // Tell ScrollTrigger to use these proxy methods
-// ScrollTrigger.scrollerProxy( '[data-scroll-container]', {
-//     scrollTop( value ) {
-//         return arguments.length ? scroll.scrollTo( value, 0, 0 ) : scroll.scroll.instance.scroll.y;
-//     },
-//     getBoundingClientRect() {
-//         return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-//     },
-//     pinType: document.querySelector( '[data-scroll-container]' ).style.transform ? "transform" : "fixed"
-// } );
+// // Tell ScrollTrigger to use these proxy methods
+ScrollTrigger.scrollerProxy( '[data-scroll-container]', {
+    scrollTop( value ) {
+        return arguments.length ? scroll.scrollTo( value, 0, 0 ) : scroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    pinType: document.querySelector( '[data-scroll-container]' ).style.transform ? "transform" : "fixed"
+} );
 
-// // // Set ScrollTrigger defaults
-// ScrollTrigger.defaults( {
-//     scroller: '[data-scroll-container]'
-// } );
+// // Set ScrollTrigger defaults
+ScrollTrigger.defaults( {
+    scroller: '[data-scroll-container]'
+} );
 
 function work() {
     const wezaButton = document.getElementById('tabweza');
