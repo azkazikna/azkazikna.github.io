@@ -8,19 +8,19 @@ toggleMode.addEventListener('change', ()=>{
 })
 
 //animation loading
-// paceOptions = {
-//     ajax: true,
-//     document: true,
-//     eventLag: false,
-//     restartOnRequestAfter: false
-// };
+paceOptions = {
+    ajax: true,
+    document: true,
+    eventLag: false,
+    restartOnRequestAfter: false
+};
 
-// Pace.on('done', function() {
-//     $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
-//     $.bez([0.19, 1, 0.22, 1]));
+Pace.on('done', function() {
+    $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
+    $.bez([0.19, 1, 0.22, 1]));
 
-//     $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
-// });
+   $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
+});
 
 // animation transition
 function delay(n) {
