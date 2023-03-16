@@ -19,11 +19,8 @@ Pace.on('done', function() {
     $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
     $.bez([0.19, 1, 0.22, 1]));
 
-<<<<<<< HEAD
     $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
-=======
-   $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
->>>>>>> d05f5594f8e0884326d39c64bf37daaae2c128ad
+    $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
 });
 
 // animation transition
