@@ -102,7 +102,7 @@ html {
 }
 
 .pace .pace-progress {
-  @apply box-border max-w-[400px] absolute z-[999999999] block top-0 right-full h-full w-full bg-white;
+  @apply box-border max-w-[90vw] absolute z-[999999999] block top-0 right-full h-full w-full bg-white;
 }
 
 .pace.pace-inactive {
@@ -114,5 +114,12 @@ html {
 }
 
 .p {
-  @apply absolute top-[40%] left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-lg lg:text-xl;
+  @apply absolute top-[40%] left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-6xl lg:text-7xl font-bold lg:font-black font-tungsten uppercase;
+}
+
+.stroke {
+  /* Prefix required. Even Firefox only supports the -webkit- prefix */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #768079;
+  -webkit-text-fill-color: transparent;
 }

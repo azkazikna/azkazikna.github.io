@@ -648,6 +648,18 @@ video {
   top: -5px;
 }
 
+.-bottom-14 {
+  bottom: -3.5rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
 .left-\[1\%\] {
   left: 1%;
 }
@@ -658,6 +670,10 @@ video {
 
 .-z-20 {
   z-index: -20;
+}
+
+.-z-10 {
+  z-index: -10;
 }
 
 .z-10 {
@@ -685,11 +701,6 @@ video {
   margin-right: auto;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -702,8 +713,8 @@ video {
   margin-top: 1.5rem;
 }
 
-.mb-14 {
-  margin-bottom: 3.5rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mb-2 {
@@ -740,14 +751,6 @@ video {
 
 .mb-10 {
   margin-bottom: 2.5rem;
-}
-
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .mt-4 {
@@ -806,6 +809,10 @@ video {
   height: 0.75rem;
 }
 
+.h-2 {
+  height: 0.5rem;
+}
+
 .h-\[1px\] {
   height: 1px;
 }
@@ -840,6 +847,10 @@ video {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-20 {
@@ -1038,6 +1049,11 @@ video {
   background-color: rgb(255 70 85 / var(--tw-bg-opacity));
 }
 
+.bg-lightval {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 217 210 / var(--tw-bg-opacity));
+}
+
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(168 178 209 / var(--tw-bg-opacity));
@@ -1190,11 +1206,6 @@ video {
   font-family: "Poppins", sans-serif;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
-
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1205,9 +1216,24 @@ video {
   line-height: 1.25rem;
 }
 
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
 }
 
 .text-lg {
@@ -1218,11 +1244,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
 }
 
 .text-2xl {
@@ -1267,6 +1288,11 @@ video {
 .text-bgLight {
   --tw-text-opacity: 1;
   color: rgb(240 238 240 / var(--tw-text-opacity));
+}
+
+.text-lightval {
+  --tw-text-opacity: 1;
+  color: rgb(219 217 210 / var(--tw-text-opacity));
 }
 
 .text-redval {
@@ -1588,7 +1614,7 @@ html {
   display: block;
   height: 100%;
   width: 100%;
-  max-width: 400px;
+  max-width: 90vw;
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
@@ -1615,17 +1641,28 @@ html {
   --tw-translate-y: -50%;
   --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-family: "Tungsten Bold", sans-serif;
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 1024px) {
   .p {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 4.5rem;
+    line-height: 1;
+    font-weight: 900;
   }
+}
+
+.stroke {
+  /* Prefix required. Even Firefox only supports the -webkit- prefix */
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: #768079;
+  -webkit-text-fill-color: transparent;
 }
 
 .hover\:scale-105:hover {
@@ -1870,6 +1907,10 @@ html {
     left: 2rem;
   }
 
+  .lg\:-left-\[10\%\] {
+    left: -10%;
+  }
+
   .lg\:left-\[7\%\] {
     left: 7%;
   }
@@ -1878,12 +1919,16 @@ html {
     margin-top: 0px;
   }
 
-  .lg\:mb-20 {
-    margin-bottom: 5rem;
+  .lg\:mb-10 {
+    margin-bottom: 2.5rem;
   }
 
   .lg\:mb-7 {
     margin-bottom: 1.75rem;
+  }
+
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .lg\:block {
@@ -1993,6 +2038,10 @@ html {
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .lg\:text-\[200px\] {
+    font-size: 200px;
   }
 
   .lg\:text-xl {
