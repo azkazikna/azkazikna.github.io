@@ -97,18 +97,18 @@
         <main data-barba="container" data-barba-namespace="home" data-scroll-section>
             <!-- hero section start -->
             <section id="hero" class="flex justify-center pt-36 pb-48 lg:pt-44 lg:pb-48 relative">
-                <div class="px-4 lg:px-52">
+                <div class="px-4 lg:px-32 xl:px-52">
                     <div class="w-full relative">
                         <div class="w-4 h-4 bg-redval absolute left-full -z-20"></div>
                         <div class="w-3 h-3 bg-redval absolute left-2/3 top-1/2 -z-20"></div>
                         <div class="w-5 h-5 bg-redval absolute left-full top-full -z-20"></div>
-                        <p class="text-base dark:font-extralight text-textLight dark:text-primary mb-14 lg:mb-20">Hi, my
-                            name is</p>
+                        <p class="text-base dark:font-extralight text-textLight dark:text-primary mb-14 lg:mb-20 h-5"
+                            id="typed"></p>
                         <h1
-                            class="dark:text-white text-textLight font-tungsten text-5xl lg:text-8xl font-bold mb-2 animate-this">
+                            class="dark:text-white text-textLight font-tungsten text-5xl lg:text-8xl font-bold lg:font-black mb-2 animate-this">
                             Azkazikna Ageung Laksana</h1>
                         <h1
-                            class="dark:text-secondary text-textLight font-tungsten text-5xl lg:text-8xl font-bold mb-7 lg:mb-7 animate-this">
+                            class="dark:text-secondary text-textLight font-tungsten text-5xl lg:text-8xl font-bold lg:font-black mb-7 lg:mb-7 animate-this">
                             I create solutions from <span class="text-redval">coding</span>.</h1>
                         <p
                             class="text-base dark:text-secondary text-paraVal lg:w-1/2 mb-9 animate-this2 overflow-hidden">
@@ -197,10 +197,13 @@
 
             <!-- About me section start-->
             <section id="about" class="pb-48">
-                <div class="px-4 lg:px-52 xl:pl-52 lg:flex lg:gap-11">
+                <div class="px-4 lg:px-32 xl:px-52 lg:flex lg:gap-11">
                     <div class="w-full">
                         <div class="w-full flex items-center gap-5">
-                            <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl">About me</h4>
+                            <h4
+                                class="font-bold lg:font-black font-tungsten dark:text-white text-4xl lg:text-5xl uppercase">
+                                About
+                                me</h4>
                             <span class="w-1/2 h-[1px] bg-textLight dark:bg-white block lg:w-3/4"></span>
                         </div>
                         <p class="mt-14 mb-7 dark:text-secondary text-paraVal">
@@ -244,7 +247,7 @@
                 <div class="container lg:w-[60%] mx-auto px-4">
                     <div class="w-full flex items-center gap-5">
                         <h4
-                            class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1] text-redval">
+                            class="font-bold lg:font-black font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1] text-redval uppercase">
                             Where I
                             have worked</h4>
                         <span class="w-1/2 h-[1px] bg-textLight dark: block grow-[5]"></span>
@@ -306,7 +309,9 @@
             <section id="built" class="pb-48 flex justify-center">
                 <div class="container lg:w-[85%] px-4">
                     <div class="w-full flex items-center gap-5 justify-center mb-10">
-                        <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1]">Some
+                        <h4
+                            class="font-bold lg:font-black font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1] uppercase">
+                            Some
                             Things I've built
                         </h4>
                         <span class="w-1/2 h-[1px] bg-textLight dark: block lg:grow-[5]"></span>
@@ -574,8 +579,10 @@
 
             <!-- project section start -->
             <section id="project" class="pb-48">
-                <div class="container mx-auto project">
-                    <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl text-center">Noteworthy
+                <div class="container mx-auto project lg:px-32 xl:px-52">
+                    <h4
+                        class="font-bold lg:font-black font-tungsten dark:text-white text-4xl lg:text-5xl text-center uppercase">
+                        Noteworthy
                         <span class="text-redval">Achievement</span>
                     </h4>
                     <a href="achievement.html">
@@ -667,7 +674,7 @@
             <!-- contact section start -->
             <section id="contact" class="pb-40">
                 <div class="container mx-auto px-4">
-                    <h1 class="font-semibold font-tungsten dark:text-white text-7xl lg:text-8xl mb-5 lg:mb-20 text-center uppercase"
+                    <h1 class="font-bold lg:font-black font-tungsten dark:text-white text-7xl lg:text-8xl mb-5 lg:mb-20 text-center uppercase"
                         data-scroll data-scroll-speed="6" data-scroll-delay="0.15">Get in touch</h1>
                     <p class="mb-20 text-center">Although I’m not currently looking for any new opportunities, my inbox
                         is always open. Whether you have a question or just want to say hi, I’ll try my best to get back
@@ -682,8 +689,7 @@
             <!-- footer start -->
             <footer id="footer">
                 <div class="container px-4 py-8 mx-auto">
-                    <p class="dark:font-extralight text-base dark:text-secondary text-center">Designed by <a href="#"
-                            class="dark:text-white font-semibold">Stephen Gachoka</a> Built by <a
+                    <p class="dark:font-extralight text-base dark:text-secondary text-center">Built by <a
                             href="https://github.com/azkazikna" class="dark:text-white font-semibold">Azkazikna Ageung
                             Laksana</a></p>
                 </div>
@@ -772,6 +778,8 @@
     </div>
     <!-- to top -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Typed JS -->
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
     <!-- Pace JS (Loading) -->
     <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
     <script src="dist/js/jquery.bez.js"></script>

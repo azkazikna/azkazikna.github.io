@@ -84,6 +84,12 @@ window.addEventListener('click', function(e) {
     }
 });
 
+var typed = new Typed('#typed', {
+    strings: ['Hi, my name is', 'Bonjour, je m\'appelle', 'こんにちは、私の名前は', 'Hallo, mein Name ist', 'Olá, o meu nome é', 'Hola, me llamo', 'Salve, il mio nome è'],
+    typeSpeed: 20,
+    showCursor: false,
+    loop: true
+});
 
 
 const swiper = new Swiper('.swiper', {
@@ -105,7 +111,7 @@ const swiper = new Swiper('.swiper', {
         },
         // when window width is >= 640px
         640: {
-          slidesPerView: 2,
+          slidesPerView: 3,
           spaceBetween: 40
         },
         1520: {
