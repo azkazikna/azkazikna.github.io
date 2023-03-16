@@ -110,7 +110,7 @@ html {
 }
 
 #preloader {
-  @apply w-full h-[100vh] bg-[#101010] overflow-hidden fixed ease-bez-loading z-[99999];
+  @apply w-full h-[100vh] bg-textLight overflow-hidden fixed ease-bez-loading z-[99999];
 }
 
 .p {

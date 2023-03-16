@@ -1190,6 +1190,11 @@ video {
   font-family: "Poppins", sans-serif;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1198,11 +1203,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .text-4xl {
@@ -1233,10 +1233,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.font-black {
-  font-weight: 900;
 }
 
 .font-bold {
@@ -1608,7 +1604,7 @@ html {
   width: 100%;
   overflow: hidden;
   --tw-bg-opacity: 1;
-  background-color: rgb(16 16 16 / var(--tw-bg-opacity));
+  background-color: rgb(15 25 35 / var(--tw-bg-opacity));
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -1977,6 +1973,11 @@ html {
 
   .lg\:pb-12 {
     padding-bottom: 3rem;
+  }
+
+  .lg\:text-7xl {
+    font-size: 4.5rem;
+    line-height: 1;
   }
 
   .lg\:text-8xl {
