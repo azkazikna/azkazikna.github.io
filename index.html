@@ -16,23 +16,25 @@
     <script src="https://kit.fontawesome.com/27e42df87e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link href="//db.onlinewebfonts.com/c/7bb508fd7255ec38b6f29cb4cf8668cf?family=DINNextW1G-Regular" rel="stylesheet"
+        type="text/css" />
 </head>
 
-<body class="dark:bg-background font-poppins dark:text-white text-textLight bg-bgLight" data-barba="wrapper">
+<body class="dark:bg-background font-din dark:text-white text-textLight bg-bgVal relative" data-barba="wrapper">
     <div data-scroll-container>
         <!-- loading start -->
         <div class="load-container">
             <div class="loading-screen"></div>
         </div>
-        <div id="preloader">
+        <!-- <div id="preloader">
             <div class="p">LOADING</div>
-        </div>
+        </div> -->
         <!-- loading end -->
 
 
         <!-- header start -->
         <header
-            class="fixed top-0 w-full flex justify-center transition duration-300 ease-linear z-[99] bg-[#F0EEF0] dark:bg-background bg-opacity-70 dark:bg-opacity-70 dark:backdrop-blur-sm backdrop-blur-sm border-b-[0.2px]  border-textLight dark:border-white border-opacity-20 dark:border-opacity-20">
+            class="fixed top-0 w-full flex justify-center transition duration-300 ease-linear z-[99] bgVal dark:bg-background bg-opacity-70 dark:bg-opacity-70 dark:backdrop-blur-sm backdrop-blur-sm border-b-[0.2px]  border-textLight dark:border-white border-opacity-20 dark:border-opacity-20">
             <div class="container flex justify-between items-center px-3 py-2">
                 <div class="px-4 py-3">
                     <a href="index.html" class="logo dark:hidden"><img src="dist/img/logo-light.png"
@@ -45,7 +47,7 @@
                     <span class="hamburger-line transition duration-300 ease-in-out"></span>
                     <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
                 </button>
-                <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] shadow-lg dark:border-white rounded-b-xl lg:static lg:block lg:border-0 bg-bgLight dark:bg-background dark:border-opacity-20 dark:lg:bg-transparent lg:bg-transparent lg:shadow-none"
+                <nav class="hidden absolute top-full right-4 px-4 py-4 min-w-[250px] border-[1px] shadow-lg dark:border-white rounded-b-xl lg:static lg:block lg:border-0 bg-bgVal dark:bg-background dark:border-opacity-20 dark:lg:bg-transparent lg:bg-transparent lg:shadow-none"
                     data-barba-prevent="all">
                     <ul class="lg:flex gap-5 items-center">
                         <li
@@ -72,7 +74,7 @@
                         </li>
                         <li class="mt-3 lg:mt-0">
                             <a id="nav-items" href="dist/pdf/resume.pdf"
-                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight border-[1px] py-2 px-2 border-textLight dark:border-primary rounded hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">
+                                class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight border-[1px] py-2 px-2 border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">
                                 Resume
                             </a>
                         </li>
@@ -83,7 +85,7 @@
                                 <i class="fas fa-moon text-textLight"></i>
                                 <i class="fa-solid fa-sun text-bgLight text-sm"></i>
                                 <div
-                                    class='ball w-5 h-5 bg-bgLight absolute t-[2px] l-[2px] rounded-full transition duration-200 ease-linear'>
+                                    class='ball w-5 h-5 bg-bgVal absolute t-[2px] l-[2px] rounded-full transition duration-200 ease-linear'>
                             </label>
                         </li>
                     </ul>
@@ -96,17 +98,22 @@
             <!-- hero section start -->
             <section id="hero" class="flex justify-center pt-36 pb-48 lg:pt-44 lg:pb-48 relative">
                 <div class="px-4 lg:px-52">
-                    <div class="w-full">
+                    <div class="w-full relative">
+                        <div class="w-4 h-4 bg-redval absolute left-full -z-20"></div>
+                        <div class="w-3 h-3 bg-redval absolute left-2/3 top-1/2 -z-20"></div>
+                        <div class="w-5 h-5 bg-redval absolute left-full top-full -z-20"></div>
                         <p class="text-base dark:font-extralight text-textLight dark:text-primary mb-14 lg:mb-20">Hi, my
                             name is</p>
-                        <h1 class="dark:text-white text-textLight text-4xl lg:text-6xl font-bold mb-2 animate-this">
+                        <h1
+                            class="dark:text-white text-textLight font-tungsten text-5xl lg:text-8xl font-bold mb-2 animate-this">
                             Azkazikna Ageung Laksana</h1>
                         <h1
-                            class="dark:text-secondary text-textLight text-4xl lg:text-6xl font-bold mb-7 lg:mb-7 animate-this">
-                            I create solutions from coding.</h1>
+                            class="dark:text-secondary text-textLight font-tungsten text-5xl lg:text-8xl font-bold mb-7 lg:mb-7 animate-this">
+                            I create solutions from <span class="text-redval">coding</span>.</h1>
                         <p
-                            class="text-base dark:text-secondary text-textLight lg:w-1/2 mb-9 animate-this2 overflow-hidden">
-                            I am a <a href="#" class="font-semibold" data-popover-target="popover-fullstack">Fullstack
+                            class="text-base dark:text-secondary text-paraVal lg:w-1/2 mb-9 animate-this2 overflow-hidden">
+                            I am a <a href="#" class="font-semibold text-textLight"
+                                data-popover-target="popover-fullstack">Fullstack
                                 Web
                                 Developer</a> from Bogor,
                             Indonesia. I enjoy coding logic and structure
@@ -132,7 +139,7 @@
                                 </svg>
                                 Download CV</a>
                             <a href="#"
-                                class="buttonAnimate text-textLight dark:text-primary font-semibold rounded-xl px-7 py-3 border-[1px] border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background group transition duration-300 ease-in-out relative overflow-hidden">
+                                class="buttonAnimate text-textLight dark:text-primary font-semibold px-7 py-2 border-[1px] border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background group transition duration-300 ease-in-out relative overflow-hidden">
                                 <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"
                                     class="inline-block mr-2 group-hover:fill-bgLight dark:group-hover:fill-background fill-textLight dark:fill-primary transition duration-300 ease-in-out">
                                     <path
@@ -193,10 +200,10 @@
                 <div class="px-4 lg:px-52 xl:pl-52 lg:flex lg:gap-11">
                     <div class="w-full">
                         <div class="w-full flex items-center gap-5">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">About me</h4>
+                            <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl">About me</h4>
                             <span class="w-1/2 h-[1px] bg-textLight dark:bg-white block lg:w-3/4"></span>
                         </div>
-                        <p class="mt-14 mb-7 dark:text-secondary animate-paragraf">
+                        <p class="mt-14 mb-7 dark:text-secondary text-paraVal">
                             I am a graduate of Vocational Highschool majoring in Software Engineering and have an
                             interest in web development and UI/UX design. Studying web development for 3 years has given
                             me a lot of flying hours in terms of coding but it doesn't make me feel satisfied.
@@ -221,9 +228,9 @@
                     <div class="w-full mt-16">
                         <div class="w-full">
                             <div
-                                class="w-[300px] h-[300px] lg:w-[400px] border-2 border-textLight dark:border-primary rounded-xl mx-auto relative">
+                                class="w-[300px] h-[300px] lg:w-[400px] border-2 border-textLight dark:border-primary mx-auto relative">
                                 <img src="dist/img/azka.webp" alt="Azkazikna"
-                                    class="rounded-xl absolute -left-7 -top-7 w-[300px] h-[300px] lg:w-[400px] object-cover"
+                                    class="absolute -left-7 -top-7 w-[300px] h-[300px] lg:w-[400px] object-cover"
                                     data-scroll data-scroll-speed="6" data-scroll-delay="0.04">
                             </div>
                         </div>
@@ -236,7 +243,10 @@
             <section id="work" class="pb-16 lg:pb-12">
                 <div class="container lg:w-[60%] mx-auto px-4">
                     <div class="w-full flex items-center gap-5">
-                        <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl grow-[1]">Where I have worked</h4>
+                        <h4
+                            class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1] text-redval">
+                            Where I
+                            have worked</h4>
                         <span class="w-1/2 h-[1px] bg-textLight dark: block grow-[5]"></span>
                     </div>
                 </div>
@@ -252,10 +262,10 @@
                     </div>
                     <div class="text-content relative mt-10 lg:mt-0 overflow-auto w-full">
                         <div class="weza text">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Fullstack Web Developer <span
-                                    class="text-project dark:text-primary">@Freelance</span></h4>
+                            <h4 class="font-semibold dark:text-white text-4xl lg:text-5xl font-tungsten">Fullstack Web
+                                Developer <span class="text-redval dark:text-primary">@Freelance</span></h4>
                             <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jun 2021 - Present</h5>
-                            <ul class="mt-7">
+                            <ul class="mt-7 text-paraVal">
                                 <li><span class="relative -top-[5px]">Create a news website "Youth of the Nation" using
                                         Wordpress.</span></li>
                                 <li><span class="relative -top-[5px]">Create a Laboratory Information Management System
@@ -268,10 +278,11 @@
                             </ul>
                         </div>
                         <div class="ellysoft text">
-                            <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl">Web Developer <span
-                                    class="text-project dark:text-primary">@Jakarta Global University</span></h4>
+                            <h4 class="font-semibold dark:text-white text-4xl lg:text-5xl font-tungsten">Web Developer
+                                <span class="text-redval dark:text-primary">@Jakarta Global University</span>
+                            </h4>
                             <h5 class="font-semibold dark:text-white text-base lg:text-lg">Jan 2021 - August 2021</h5>
-                            <ul class="mt-7">
+                            <ul class="mt-7 text-paraVal">
                                 <li>Create a landing page for informatics engineering
                                     majors.</li>
                                 <li>Handling bugs in web applications.</li>
@@ -295,23 +306,26 @@
             <section id="built" class="pb-48 flex justify-center">
                 <div class="container lg:w-[85%] px-4">
                     <div class="w-full flex items-center gap-5 justify-center mb-10">
-                        <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl grow-[1]">Some Things I've built
+                        <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl grow-[1]">Some
+                            Things I've built
                         </h4>
                         <span class="w-1/2 h-[1px] bg-textLight dark: block lg:grow-[5]"></span>
                     </div>
                     <div class="swiper">
                         <div class="swiper-wrapper">
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <div class="overflow-hidden">
-                                    <img src="dist/img/project/lsp.webp" alt="Web LSP"
-                                        class="group-hover:rotate-[4deg] group-hover:scale-[1.15] transition duration-500">
+                                    <img src="dist/img/project/lsp.webp" alt="Web LSP" class="">
                                 </div>
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Professional Certification Registration</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Registration App – Fullstack • 2021</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-ci">
@@ -325,25 +339,19 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-mailer">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/lostandfound.svg" alt="Lost and Found" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Lost and Found</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Social Media App – Fullstack • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-ci">
@@ -354,25 +362,19 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-mailer">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/libraryJGU.webp" alt="Library JGU" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Library JGU</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         E-Library App – Fullstack • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-ci">
@@ -386,25 +388,19 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-figma">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/evoting.webp" alt="Web Evoting" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         E-Voting PENUS</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         E-Voting App – Fullstack • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-ci">
@@ -412,49 +408,40 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-bs">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/portfolio-tailwind.webp" alt="Portfolio Tailwind" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Personal Portfolio Website</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Portfolio – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-tailwind">
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
+                                        <img src="dist/img/icon/figma.svg" alt="Figma"
+                                            class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
+                                            data-tooltip-target="tooltip-figma">
                                     </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/web3.webp" alt="Web 3 Tailwind" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Web3
                                         Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-tailwind">
@@ -462,26 +449,20 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-figma">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/real-estate.webp" alt="Web Real Estate" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Real
                                         Estate Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-tailwind">
@@ -489,25 +470,19 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-figma">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/foodhub.webp" alt="Web FoodHub" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         FoodHub Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-tailwind">
@@ -515,71 +490,52 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-figma">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/surviveweb.webp" alt="Web Survive Theme" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Survive Adventure Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/bootstrap-5-1.svg" alt="Bootstrap"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-bs">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/lsp_landing.webp" alt="Web LSP Wordpress" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-4">
-                                        Institute for Certification of Competencies Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5 class="font-semibold lg:text-lg text-bgLight dark:text-secondary mb-4">
+                                        Institute for Certification of Competencies Landing</h5>
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/wordpress-blue.svg" alt="Wordpress"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-wp">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/abkd.webp" alt="Web Aplikasi Beban Kerja Dosen" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         Lecturer's Workload Application</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Information System App – Fullstack • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/codeigniter.svg" alt="Codeigniter"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-ci">
@@ -587,40 +543,25 @@
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-bs">
                                     </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
-                                    </div>
                                 </div>
                             </div>
-                            <div class="rounded-xl overflow-hidden swiper-slide group">
+                            <div class="overflow-hidden swiper-slide group border-[0.2px] border-paraVal">
                                 <img src="dist/img/project/haidoc.webp" alt="HaiDoc Web" class="">
-                                <div class="card-body px-6 py-7 bg-textLight dark:bg-project">
-                                    <h5 class="font-semibold text-lg lg:text-xl text-bgLight dark:text-secondary mb-2">
+                                <div
+                                    class="card-body px-6 py-5 bg-bgVal dark:bg-project group-hover:bg-textLight transition duration-300">
+                                    <h5
+                                        class="font-semibold lg:text-lg text-textLight dark:text-secondary mb-2 group-hover:text-white transition duration-300">
                                         HaiDoc Landing Page</h5>
-                                    <h6 class="text-sm font-light text-bgLight dark:text-secondary mb-5">
+                                    <h6
+                                        class="text-paraVal text-sm font-medium dark:text-secondary mb-5 transition duration-300">
                                         Landing Page – Frontend • 2022</h6>
-                                    <div class="flex items-center gap-3 mb-6">
+                                    <div class="flex items-center gap-3">
                                         <img src="dist/img/icon/tailwind-css-2.svg" alt="Tailwind"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-tailwind">
                                         <img src="dist/img/icon/figma.svg" alt="Figma"
                                             class="w-5 lg:w-6 grayscale group-hover:grayscale-0 transition duration-500"
                                             data-tooltip-target="tooltip-figma">
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <a href="#" class="text-bgLight text-sm lg:text-base">
-                                            View Code <img src="dist/img/arrow_light.svg" alt="Arrow"
-                                                class="inline-block ml-2">
-                                        </a>
-                                        <a href="#"
-                                            class="py-2 px-5 hover:bg-primary rounded-lg hover:text-background text-bgLight dark:text-primary border-2 border-primary transition duration-500 ease-in-out text-sm lg:text-base">Live
-                                            Preview</a>
                                     </div>
                                 </div>
                             </div>
@@ -634,7 +575,8 @@
             <!-- project section start -->
             <section id="project" class="pb-48">
                 <div class="container mx-auto project">
-                    <h4 class="font-semibold dark:text-white text-2xl lg:text-3xl text-center">Noteworthy Achievement
+                    <h4 class="font-semibold font-tungsten dark:text-white text-4xl lg:text-5xl text-center">Noteworthy
+                        <span class="text-redval">Achievement</span>
                     </h4>
                     <a href="achievement.html">
                         <h5
@@ -725,8 +667,8 @@
             <!-- contact section start -->
             <section id="contact" class="pb-40">
                 <div class="container mx-auto px-4">
-                    <h1 class="dark:text-white text-4xl lg:text-6xl font-bold mb-5 lg:mb-20 text-center" data-scroll
-                        data-scroll-speed="6" data-scroll-delay="0.15">Get in touch</h1>
+                    <h1 class="font-semibold font-tungsten dark:text-white text-7xl lg:text-8xl mb-5 lg:mb-20 text-center uppercase"
+                        data-scroll data-scroll-speed="6" data-scroll-delay="0.15">Get in touch</h1>
                     <p class="mb-20 text-center">Although I’m not currently looking for any new opportunities, my inbox
                         is always open. Whether you have a question or just want to say hi, I’ll try my best to get back
                         to you!</p>
@@ -824,6 +766,9 @@
             </div>
             <!-- Tooltip End -->
         </main>
+
+
+        <div class="h-full w-[0.5px] bg-paraVal absolute top-0 left-[1%] lg:left-[7%] z-[-999999999999]"></div>
     </div>
     <!-- to top -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

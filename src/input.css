@@ -2,13 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url(//db.onlinewebfonts.com/c/561f38b1f4570de0fb8a39d691ab058c?family=Tungsten+Bold);
+@import url(//db.onlinewebfonts.com/c/7bb508fd7255ec38b6f29cb4cf8668cf?family=DINNextW1G-Regular);
+
+@font-face {
+  font-family: "Tungsten Bold";
+  src: url("../font/Tungsten-Black.otf");
+}
+
+@font-face {
+  font-family: "DINNextW1G-Regular";
+  src: url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.eot");
+  src: url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.woff2") format("woff2"),
+    url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.woff") format("woff"), url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/7bb508fd7255ec38b6f29cb4cf8668cf.svg#DINNextW1G-Regular") format("svg");
+}
+
 html {
   overflow-x: hidden;
 }
 
 .buttonAnimate::before {
   transform-origin: 0 0;
-  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-500 ease-in-out;
+  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-300 ease-in-out;
 }
 
 .buttonAnimate2::before {

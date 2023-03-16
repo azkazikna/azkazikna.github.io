@@ -8,18 +8,19 @@ toggleMode.addEventListener('change', ()=>{
 })
 
 //animation loading
-paceOptions = {
-    ajax: true,
-    document: true,
-    eventLag: false
-};
+// paceOptions = {
+//     ajax: true,
+//     document: true,
+//     eventLag: false,
+//     restartOnRequestAfter: false
+// };
 
-Pace.on('done', function() {
-    $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
-    $.bez([0.19, 1, 0.22, 1]));
+// Pace.on('done', function() {
+//     $('.p').delay(500).animate({top: '30%', opacity: '0'}, 3000,
+//     $.bez([0.19, 1, 0.22, 1]));
 
-    $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
-});
+//     $("#preloader").delay(1500).animate({top: '-1000'}, 2000, $.bez([0.19, 1, 0.22, 1]));
+// });
 
 // animation transition
 function delay(n) {
@@ -108,7 +109,7 @@ const swiper = new Swiper('.swiper', {
           spaceBetween: 40
         },
         1520: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 40
         }
     },
@@ -126,14 +127,12 @@ const swiper = new Swiper('.swiper', {
 
 var scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
-    smooth: true,
+    smooth: false,
     mobile: {
-        smooth: true,
         breakpoint: 0,    // <---- Fixes The Issue 🎉
         getDirection: true,
     },
     tablet: {
-        smooth: true,
         breakpoint: 0,    // <---- Fixes The Issue 🎉
         getDirection: true,
     }
