@@ -11,6 +11,7 @@ module.exports = {
         bgLight: '#F0EEF0',
         bgVal: '#ECE8E1',
         redval: '#FF4655',
+        blackval: '#111111',
         lightval: '#DBD9D2',
         paraVal: '#768079',
         secondary: '#A8B2D1',

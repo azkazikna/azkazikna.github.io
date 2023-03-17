@@ -829,6 +829,10 @@ video {
   width: 100%;
 }
 
+.w-\[55px\] {
+  width: 55px;
+}
+
 .w-\[85px\] {
   width: 85px;
 }
@@ -877,6 +881,10 @@ video {
   width: 0.5px;
 }
 
+.w-\[45px\] {
+  width: 45px;
+}
+
 .min-w-\[250px\] {
   min-width: 250px;
 }
@@ -905,6 +913,13 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .grid-cols-1 {
@@ -1015,6 +1030,11 @@ video {
   border-color: rgb(15 25 35 / var(--tw-border-opacity));
 }
 
+.border-lightval {
+  --tw-border-opacity: 1;
+  border-color: rgb(219 217 210 / var(--tw-border-opacity));
+}
+
 .border-secondary {
   --tw-border-opacity: 1;
   border-color: rgb(168 178 209 / var(--tw-border-opacity));
@@ -1037,6 +1057,11 @@ video {
 .bg-bgVal {
   --tw-bg-opacity: 1;
   background-color: rgb(236 232 225 / var(--tw-bg-opacity));
+}
+
+.bg-blackval {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#111\] {
@@ -1285,14 +1310,14 @@ video {
   color: rgb(15 25 35 / var(--tw-text-opacity));
 }
 
-.text-bgLight {
-  --tw-text-opacity: 1;
-  color: rgb(240 238 240 / var(--tw-text-opacity));
-}
-
 .text-lightval {
   --tw-text-opacity: 1;
   color: rgb(219 217 210 / var(--tw-text-opacity));
+}
+
+.text-bgLight {
+  --tw-text-opacity: 1;
+  color: rgb(240 238 240 / var(--tw-text-opacity));
 }
 
 .text-redval {
@@ -1490,7 +1515,7 @@ html {
   height: 2px;
   width: 30px;
   --tw-bg-opacity: 1;
-  background-color: rgb(15 25 35 / var(--tw-bg-opacity));
+  background-color: rgb(219 217 210 / var(--tw-bg-opacity));
 }
 
 .dark .hamburger-line {
@@ -1630,7 +1655,7 @@ html {
   width: 100%;
   overflow: hidden;
   --tw-bg-opacity: 1;
-  background-color: rgb(15 25 35 / var(--tw-bg-opacity));
+  background-color: rgb(17 17 17 / var(--tw-bg-opacity));
   transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
@@ -1945,6 +1970,10 @@ html {
 
   .lg\:h-20 {
     height: 5rem;
+  }
+
+  .lg\:w-\[55px\] {
+    width: 55px;
   }
 
   .lg\:w-1\/2 {

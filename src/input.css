@@ -50,7 +50,7 @@ html {
 }
 
 .hamburger-line {
-  @apply w-[30px] h-[2px] bg-textLight dark:bg-white block my-2;
+  @apply w-[30px] h-[2px] bg-lightval dark:bg-white block my-2;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -110,7 +110,7 @@ html {
 }
 
 #preloader {
-  @apply w-full h-[100vh] bg-textLight overflow-hidden fixed ease-bez-loading z-[99999];
+  @apply w-full h-[100vh] bg-blackval overflow-hidden fixed ease-bez-loading z-[99999];
 }
 
 .p {
