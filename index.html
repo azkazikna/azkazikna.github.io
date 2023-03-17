@@ -26,9 +26,9 @@
         <div class="load-container">
             <div class="loading-screen"></div>
         </div>
-        <div id="preloader">
+        <!-- <div id="preloader">
             <div class="p">Loading</div>
-        </div>
+        </div> -->
         <!-- loading end -->
 
 
@@ -96,7 +96,7 @@
 
         <main data-barba="container" data-barba-namespace="home" data-scroll-section>
             <!-- hero section start -->
-            <section id="hero" class="flex justify-center pt-36 pb-48 lg:pt-44 lg:pb-48 relative">
+            <section id="hero" class="flex justify-center pt-36 pb-32 lg:pt-44 lg:pb-48 relative">
                 <div class="px-4 lg:px-32 xl:px-52">
                     <div class="w-full relative">
                         <div class="w-4 h-4 bg-redval absolute left-full -z-20"></div>
@@ -144,13 +144,25 @@
                                     </defs>
                                 </svg>
                                 Download CV</a>
-                            <a href="#"
-                                class="buttonAnimate text-textLight dark:text-primary font-semibold px-7 py-2 border-[1px] border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background group transition duration-300 ease-in-out relative overflow-hidden">
-                                <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"
-                                    class="inline-block mr-2 group-hover:fill-bgLight dark:group-hover:fill-background fill-textLight dark:fill-primary transition duration-300 ease-in-out">
-                                    <path
-                                        d="M17.5 32.0833C9.44585 32.0833 2.91667 25.5541 2.91667 17.5C2.91667 9.44584 9.44585 2.91666 17.5 2.91666C25.5542 2.91666 32.0833 9.44584 32.0833 17.5C32.0745 25.5505 25.5505 32.0745 17.5 32.0833ZM17.5 5.83332C11.0567 5.83332 5.83333 11.0567 5.83333 17.5C5.83333 23.9433 11.0567 29.1667 17.5 29.1667C23.9433 29.1667 29.1667 23.9433 29.1667 17.5C29.1594 11.0597 23.9403 5.84056 17.5 5.83332ZM17.5 24.7917L10.2083 17.5L12.2646 15.4437L16.0417 19.2062V10.2083H18.9583V19.2062L22.7354 15.4437L24.7917 17.5L17.5 24.7917Z" />
-                                </svg>Portfolio</a>
+                            <div class="p-2 border-[1px] border-borderval dark:border-primary relative">
+                                <div
+                                    class="w-2 h-3 bg-bgVal dark:bg-background top-1/2 absolute -translate-y-1/2 -left-1">
+                                </div>
+                                <div
+                                    class="w-2 h-3 bg-bgVal dark:bg-background top-1/2 absolute -translate-y-1/2 -right-1">
+                                </div>
+                                <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute top-1 left-1">
+                                </div>
+                                <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute bottom-1 right-1">
+                                </div>
+                                <a href="#"
+                                    class="flex items-center relative buttonAnimate text-textLight dark:text-primary font-semibold px-7 py-2 border-[1px] border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background group transition duration-300 ease-in-out overflow-hidden">
+                                    <svg width="35" height="35" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg"
+                                        class="inline-block mr-2 group-hover:fill-bgLight dark:group-hover:fill-background fill-textLight dark:fill-primary transition duration-300 ease-in-out">
+                                        <path
+                                            d="M17.5 32.0833C9.44585 32.0833 2.91667 25.5541 2.91667 17.5C2.91667 9.44584 9.44585 2.91666 17.5 2.91666C25.5542 2.91666 32.0833 9.44584 32.0833 17.5C32.0745 25.5505 25.5505 32.0745 17.5 32.0833ZM17.5 5.83332C11.0567 5.83332 5.83333 11.0567 5.83333 17.5C5.83333 23.9433 11.0567 29.1667 17.5 29.1667C23.9433 29.1667 29.1667 23.9433 29.1667 17.5C29.1594 11.0597 23.9403 5.84056 17.5 5.83332ZM17.5 24.7917L10.2083 17.5L12.2646 15.4437L16.0417 19.2062V10.2083H18.9583V19.2062L22.7354 15.4437L24.7917 17.5L17.5 24.7917Z" />
+                                    </svg>Portfolio</a>
+                            </div>
                         </div>
                     </div>
                     <div
@@ -585,87 +597,83 @@
                             class="font-semibold text-project dark:text-primary text-lg lg:text-xl mt-4 mb-5 text-center">
                             View the archive</h5>
                     </a>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 gap-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-4 lg:gap-10">
                         <div
-                            class="w-full bg-textLight dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group shadow-lg dark:shadow-none">
-                            <div class="flex justify-between mb-6">
-                                <div class=""></div>
-                                <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z" />
-                                </svg>
-                            </div>
-                            <div class="overflow-hidden rounded-xl">
+                            class="w-full dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out group">
+                            <div class="relative">
+                                <div class="element-animate">
+                                </div>
                                 <img src="dist/img/achievement/peserta_terbaik.png" alt="Sertifikat Dicoding Javascript"
-                                    class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
+                                    class="transition duration-500 ease-in-out w-full h-56 object-cover object-top">
                             </div>
                             <a href="#"
-                                class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">Best Participant of DTS VSGA Program Online Training in 2022</h4>
+                                class="font-semibold text-headingval dark:text-secondary dark:hover:text-primary text-lg lg:text-xl uppercase mt-6 mb-5 block transition duration-500 ease-in-out">
+                                <div class="flex gap-5 lg:gap-7">
+                                    <p class="text-xs dark:text-secondary text-headingval">2022</p>
+                                    <p class="text-xs dark:text-secondary text-redval">Certificate</p>
+                                </div>
+                                <h4 class="font-bold mt-4 lg:mt-5">Best Participant of DTS VSGA Program Online Training
+                                    in 2022
+                                </h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Being
-                                the participant with the most points in "Politeknik Negeri Jambi" </p>
-                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">VSGA DTS</p>
                         </div>
                         <div
-                            class="w-full bg-textLight dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group shadow-lg dark:shadow-none">
-                            <div class="flex justify-between mb-6">
-                                <div class=""></div>
-                                <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z" />
-                                </svg>
-                            </div>
-                            <div class="overflow-hidden rounded-xl">
+                            class="w-full dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out group">
+                            <div class="relative">
+                                <div class="element-animate">
+                                </div>
                                 <img src="dist/img/achievement/sertifikat best student.webp" alt="Pelita Nusantara Vocational
-                                    Highschool Certificate"
-                                    class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
+                                Highschool Certificate"
+                                    class="transition duration-500 ease-in-out w-full h-56 object-cover object-top">
                             </div>
                             <a href="#"
-                                class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">The First Best Student of "Software Engineering"</h4>
+                                class="font-semibold text-headingval dark:text-secondary dark:hover:text-primary text-lg lg:text-xl uppercase mt-6 mb-5 block transition duration-500 ease-in-out">
+                                <div class="flex gap-5 lg:gap-7">
+                                    <p class="text-xs dark:text-secondary text-headingval">2022</p>
+                                    <p class="text-xs dark:text-secondary text-redval">Certificate</p>
+                                </div>
+                                <h4 class="font-bold mt-4 lg:mt-5">The First Best Student of "Software Engineering"</h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Became
-                                the first-ranked person in Software Engineering 1 class </p>
-                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">Pelita Nusantara
-                                Vocational
-                                Highschool Certificate</p>
                         </div>
                         <div
-                            class="w-full bg-textLight dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out hover:scale-95 group shadow-lg dark:shadow-none">
-                            <div class="flex justify-between mb-6">
-                                <div class=""></div>
-                                <svg class="fill-secondary" width="20" height="20" viewBox="0 0 35 35" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M29.5312 21.875H27.3438C27.0537 21.875 26.7755 21.9902 26.5704 22.1954C26.3652 22.4005 26.25 22.6787 26.25 22.9688V30.625H4.375V8.75H14.2188C14.5088 8.75 14.787 8.63477 14.9921 8.42965C15.1973 8.22453 15.3125 7.94633 15.3125 7.65625V5.46875C15.3125 5.17867 15.1973 4.90047 14.9921 4.69535C14.787 4.49023 14.5088 4.375 14.2188 4.375H3.28125C2.41101 4.375 1.57641 4.7207 0.961056 5.33606C0.345702 5.95141 0 6.78601 0 7.65625L0 31.7188C0 32.589 0.345702 33.4236 0.961056 34.0389C1.57641 34.6543 2.41101 35 3.28125 35H27.3438C28.214 35 29.0486 34.6543 29.6639 34.0389C30.2793 33.4236 30.625 32.589 30.625 31.7188V22.9688C30.625 22.6787 30.5098 22.4005 30.3046 22.1954C30.0995 21.9902 29.8213 21.875 29.5312 21.875ZM33.3594 0H24.6094C23.1485 0 22.4185 1.77119 23.4473 2.80273L25.8897 5.24521L9.22852 21.9003C9.07557 22.0527 8.95421 22.2338 8.8714 22.4332C8.7886 22.6327 8.74597 22.8465 8.74597 23.0624C8.74597 23.2783 8.7886 23.4921 8.8714 23.6916C8.95421 23.891 9.07557 24.0721 9.22852 24.2245L10.7782 25.7715C10.9306 25.9244 11.1118 26.0458 11.3112 26.1286C11.5106 26.2114 11.7244 26.254 11.9403 26.254C12.1563 26.254 12.3701 26.2114 12.5695 26.1286C12.7689 26.0458 12.95 25.9244 13.1024 25.7715L29.7555 9.11367L32.1973 11.5527C33.2227 12.5781 35 11.8604 35 10.3906V1.64062C35 1.2055 34.8271 0.788205 34.5195 0.480528C34.2118 0.172851 33.7945 0 33.3594 0Z" />
-                                </svg>
-                            </div>
-                            <div class="overflow-hidden rounded-xl">
+                            class="w-full dark:bg-project px-5 py-5 relative transition duration-500 ease-in-out group">
+                            <div class="relative">
+                                <div class="element-animate">
+                                </div>
                                 <img src="dist/img/achievement/sertifikat best student rpl.webp" alt="Pelita Nusantara Vocational
-                                    Highschool Certificate"
-                                    class="group-hover:scale-110 transition duration-500 ease-in-out rounded-xl">
+                                Highschool Certificate"
+                                    class="transition duration-500 ease-in-out w-full h-56 object-cover object-top">
                             </div>
                             <a href="#"
-                                class="font-semibold text-bgLight dark:text-secondary dark:hover:text-primary text-lg lg:text-xl mt-6 mb-5 block transition duration-500 ease-in-out">
-                                <h4 class="">The First Best Student of The Years "Software Engineering</h4>
+                                class="font-semibold text-headingval dark:text-secondary dark:hover:text-primary text-lg lg:text-xl uppercase mt-6 mb-5 block transition duration-500 ease-in-out">
+                                <div class="flex gap-5 lg:gap-7">
+                                    <p class="text-xs dark:text-secondary text-headingval">2022</p>
+                                    <p class="text-xs dark:text-secondary text-redval">Certificate</p>
+                                </div>
+                                <h4 class="font-bold mt-4 lg:mt-5">The First Best Student of The Years "Software
+                                    Engineering"
+                                </h4>
                             </a>
-                            <p class="text-base dark:font-extralight text-bgLight dark:text-secondary font-light">Became
-                                the first-ranked person in the Software Engineering department</p>
-                            <p class="text-xs lg:text-sm dark:text-secondary mt-4 text-bgLight">Pelita Nusantara
-                                Vocational
-                                Highschool Certificate</p>
                         </div>
                     </div>
-                    <a href="achievement.html"
-                        class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight w-72 py-2 px-10 border-[1px] border-textLight dark:border-primary text-center mt-16 block mx-auto hover:text-bgLight dark:hover:text-background hover:border-background transition duration-300 ease-in">Show
-                        More</a>
+                    <div
+                        class="p-2 border-[1px] border-borderval dark:border-primary relative h-fit w-fit left-1/2 -translate-x-1/2">
+                        <div class="w-2 h-3 bg-bgVal dark:bg-background top-1/2 absolute -translate-y-1/2 -left-1">
+                        </div>
+                        <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute top-1 left-1">
+                        </div>
+                        <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute bottom-1 right-1">
+                        </div>
+                        <div class="w-2 h-3 bg-bgVal dark:bg-background top-1/2 absolute -translate-y-1/2 -right-1">
+                        </div>
+                        <a href="achievement.html"
+                            class="buttonAnimate relative text-textLight dark:text-primary dark:font-extralight w-72 py-2 px-10 border-[1px] border-textLight dark:border-primary text-center block mx-auto hover:text-bgLight dark:hover:text-background transition duration-300 ease-in">Show
+                            More</a>
+                    </div>
 
                     <div
-                        class="stroke font-tungsten text-7xl lg:text-[200px] absolute bottom-10 lg:-left-[10%] uppercase -z-10">
-                        Noteworthy Achievement
+                        class="stroke font-tungsten text-7xl lg:text-[250px] absolute bottom-10 lg:-left-[10%] uppercase -z-10">
+                        Achievement
                     </div>
                 </div>
             </section>
@@ -691,7 +699,8 @@
                 <div class="container px-4 py-8 mx-auto">
                     <p class="dark:font-extralight text-base dark:text-secondary text-center">Built by <a
                             href="https://github.com/azkazikna" class="dark:text-white font-semibold">Azkazikna Ageung
-                            Laksana</a></p>
+                            Laksana</a> Inspired by <a href="https://playvalorant.com/id-id/"
+                            class="dark:text-white font-semibold uppercase">Valorant</a></p>
                 </div>
             </footer>
             <!-- footer end -->

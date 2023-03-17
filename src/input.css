@@ -29,9 +29,14 @@ html {
   overflow-x: hidden;
 }
 
-.buttonAnimate::before {
+.element-animate {
   transform-origin: 0 0;
-  @apply content-[""] absolute left-0 top-0 w-full h-full dark:bg-primary bg-textLight z-[-1] transition duration-300 ease-in-out;
+  @apply before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:dark:bg-primary before:z-[9] before:bg-redval before:transition before:duration-300 before:ease-in-out scale-x-0 group-hover:scale-x-100 absolute w-full h-full z-[9] transition duration-200 ease-in opacity-50;
+}
+
+.buttonAnimate {
+  transform-origin: 0 0;
+  @apply before:content-[""] before:absolute before:left-0 before:top-0 before:w-full before:h-full before:dark:bg-primary before:bg-textLight before:z-[-1] before:transition before:duration-300 before:ease-in-out after:content-[""];
 }
 
 .buttonAnimate2::before {
