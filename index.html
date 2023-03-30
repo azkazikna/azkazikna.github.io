@@ -5,30 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="dist/img/icon.png">
+    <link rel="icon" href="dist/img/icon-black.png">
     <title>Portfolio | Azkazikna</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/output.css">
-    <link rel="stylesheet" href="dist/css/locomotive.css">
     <link rel="stylesheet" href="dist/css/swiper.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://kit.fontawesome.com/27e42df87e.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
-        rel="stylesheet">
     <link href="//db.onlinewebfonts.com/c/7bb508fd7255ec38b6f29cb4cf8668cf?family=DINNextW1G-Regular" rel="stylesheet"
         type="text/css" />
 </head>
 
 <body class="dark:bg-background font-din dark:text-white text-textLight bg-bgVal relative" data-barba="wrapper">
-    <div data-scroll-container>
+    <div>
         <!-- loading start -->
         <div class="load-container">
             <div class="loading-screen"></div>
         </div>
-        <!-- <div id="preloader">
+        <div id="preloader">
             <div class="p">Loading</div>
-        </div> -->
+        </div>
         <!-- loading end -->
 
 
@@ -81,11 +77,11 @@
                         <li class="ml-4 mt-6 lg:mt-0">
                             <input type="checkbox" class="opacity-0 absolute top-0 group" id="toggleMode">
                             <label for="toggleMode"
-                                class="w-[50px] h-[26px] bg-[#111] flex rounded-full items-center justify-between p-[5px] relative scale-150 cursor-pointe transition duration-300 ease-linear cursor-pointer">
-                                <i class="fas fa-moon text-textLight"></i>
-                                <i class="fa-solid fa-sun text-bgLight text-sm"></i>
+                                class="w-[50px] h-[26px] bg-lightval flex rounded-full items-center justify-between p-[5px] relative scale-150 cursor-pointe transition duration-300 ease-linear cursor-pointer">
+                                <i class="fas fa-moon text-blackval"></i>
+                                <i class="fa-solid fa-sun text-blackval text-sm"></i>
                                 <div
-                                    class='ball w-5 h-5 bg-bgVal absolute t-[2px] l-[2px] rounded-full transition duration-200 ease-linear'>
+                                    class='ball w-5 h-5 bg-blackval absolute t-[2px] l-[2px] rounded-full transition duration-200 ease-linear'>
                             </label>
                         </li>
                     </ul>
@@ -94,7 +90,7 @@
         </header>
         <!-- header end -->
 
-        <main data-barba="container" data-barba-namespace="home" data-scroll-section>
+        <main data-barba="container" data-barba-namespace="home">
             <!-- hero section start -->
             <section id="hero" class="flex justify-center pt-36 pb-32 lg:pt-44 lg:pb-48 relative">
                 <div class="px-4 lg:px-32 xl:px-52">
@@ -118,7 +114,7 @@
                             I create solutions from <span class="text-redval">coding</span>.</h1>
                         <p
                             class="text-base dark:text-secondary text-paraVal lg:w-1/2 mb-9 animate-this2 overflow-hidden">
-                            I am a <a href="#" class="font-semibold text-textLight"
+                            I am a <a href="#" class="font-semibold text-textLight dark:text-white"
                                 data-popover-target="popover-fullstack">Fullstack
                                 Web
                                 Developer</a> from Bogor,
@@ -151,9 +147,9 @@
                                 <div
                                     class="w-2 h-3 bg-bgVal dark:bg-background top-1/2 absolute -translate-y-1/2 -right-1">
                                 </div>
-                                <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute top-1 left-1">
+                                <div class="w-2 h-2 bg-bgVal z-[9] dark:bg-background absolute top-1 left-1">
                                 </div>
-                                <div class="w-2 h-2 bg-bgVal z-[99] dark:bg-background absolute bottom-1 right-1">
+                                <div class="w-2 h-2 bg-bgVal z-[9] dark:bg-background absolute bottom-1 right-1">
                                 </div>
                                 <a href="#"
                                     class="flex items-center relative buttonAnimate text-textLight dark:text-primary font-semibold px-7 py-2 border-[1px] border-textLight dark:border-primary hover:text-bgLight dark:hover:text-background group transition duration-300 ease-in-out overflow-hidden">
@@ -214,7 +210,7 @@
             <!-- hero section end -->
 
             <!-- About me section start-->
-            <section id="about" class="pb-48">
+            <section id="about" class="pb-32 lg:pb-48">
                 <div class="px-4 lg:px-32 xl:px-52 lg:flex lg:gap-11">
                     <div class="w-full">
                         <div class="w-full flex items-center gap-5">
@@ -251,8 +247,7 @@
                             <div
                                 class="w-[300px] h-[300px] lg:w-[400px] border-2 border-textLight dark:border-primary mx-auto relative">
                                 <img src="dist/img/azka.webp" alt="Azkazikna"
-                                    class="absolute -left-7 -top-7 w-[300px] h-[300px] lg:w-[400px] object-cover"
-                                    data-scroll data-scroll-speed="6" data-scroll-delay="0.04">
+                                    class="absolute -left-7 -top-7 w-[300px] h-[300px] lg:w-[400px] object-cover">
                             </div>
                         </div>
                     </div>
@@ -682,8 +677,9 @@
             <!-- contact section start -->
             <section id="contact" class="pb-40">
                 <div class="container mx-auto px-4">
-                    <h1 class="font-bold lg:font-black font-tungsten dark:text-white text-7xl lg:text-8xl mb-5 lg:mb-20 text-center uppercase"
-                        data-scroll data-scroll-speed="6" data-scroll-delay="0.15">Get in touch</h1>
+                    <h1
+                        class="font-bold lg:font-black font-tungsten dark:text-white text-7xl lg:text-8xl mb-5 lg:mb-20 text-center uppercase">
+                        Get in touch</h1>
                     <p class="mb-20 text-center">Although I’m not currently looking for any new opportunities, my inbox
                         is always open. Whether you have a question or just want to say hi, I’ll try my best to get back
                         to you!</p>
@@ -709,7 +705,7 @@
 
             <!-- Fullstack Developer -->
             <div data-popover id="popover-fullstack" role="tooltip"
-                class="absolute z-10 invisible inline-block text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 w-96 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 overflow-hidden">
+                class="absolute z-10 invisible inline-block text-sm font-light text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 shadow-sm opacity-0 w-96 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600 overflow-hidden">
                 <div class="grid grid-cols-5">
                     <div class="col-span-3 p-3">
                         <div class="space-y-2">
