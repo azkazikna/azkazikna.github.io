@@ -16,11 +16,15 @@
   <style>
     :root {
       --red: #ff4655;
+      --red-d: #bd3944;
       --navy: #0f1923;
       --navy2: #1b2733;
+      --navy3: #16222e;
       --ink: #ece8e1;
       --mute: #8b978f;
-      --cut: 14px
+      --cut: 14px;
+      --ease: cubic-bezier(.2, .8, .2, 1);
+      --ease-out: cubic-bezier(.16, 1, .3, 1)
     }
 
     * {
@@ -31,7 +35,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 70px
+      scroll-padding-top: 80px
     }
 
     body {
@@ -44,6 +48,7 @@
     h1,
     h2,
     h3,
+    h4,
     .disp {
       font-family: "Barlow Condensed", Impact, sans-serif;
       font-weight: 800;
@@ -55,6 +60,15 @@
     a {
       color: inherit;
       text-decoration: none
+    }
+
+    img {
+      max-width: 100%
+    }
+
+    button {
+      font: inherit;
+      color: inherit
     }
 
     :focus-visible {
@@ -69,35 +83,60 @@
     }
 
     section {
-      padding: 90px 0
+      padding: 90px 0;
+      position: relative
+    }
+
+    ::selection {
+      background: var(--red);
+      color: var(--navy)
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--navy)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--red-d)
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--red)
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       background:
         linear-gradient(rgba(255, 70, 85, .05) 1px, transparent 1px) 0 0/64px 64px,
         linear-gradient(90deg, rgba(255, 70, 85, .05) 1px, transparent 1px) 0 0/64px 64px
     }
 
-    /* intro */
+    #fx {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .85
+    }
+
+    /* ============ LOADER ============ */
     #intro {
       position: fixed;
       inset: 0;
-      z-index: 999;
+      z-index: 9999;
       background: var(--red);
       display: grid;
       place-items: center;
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      transition: clip-path .7s cubic-bezier(.7, 0, .2, 1)
-    }
-
-    #intro b {
-      font: 800 clamp(40px, 10vw, 90px)/1 "Barlow Condensed", sans-serif;
-      text-transform: uppercase;
-      color: var(--navy)
+      transition: clip-path .8s cubic-bezier(.76, 0, .24, 1)
     }
 
     #intro.go {
@@ -105,16 +144,146 @@
       pointer-events: none
     }
 
-    /* nav */
+    .intro-in {
+      text-align: center;
+      color: var(--navy);
+      width: min(420px, 80vw)
+    }
+
+    #intro b {
+      font: 800 clamp(40px, 10vw, 90px)/1 "Barlow Condensed", sans-serif;
+      text-transform: uppercase;
+      display: block;
+      letter-spacing: .02em
+    }
+
+    .intro-bar {
+      height: 4px;
+      background: rgba(15, 25, 35, .25);
+      margin: 18px 0 10px;
+      overflow: hidden
+    }
+
+    .intro-bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--navy);
+      transition: width .1s linear
+    }
+
+    #pct {
+      font: 600 18px "Barlow Condensed";
+      letter-spacing: .3em;
+      text-transform: uppercase
+    }
+
+    /* ============ CURSOR ============ */
+    #xh {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 26px;
+      height: 26px;
+      margin: -13px 0 0 -13px;
+      pointer-events: none;
+      z-index: 998;
+      display: none;
+      transition: width .15s var(--ease), height .15s var(--ease), margin .15s var(--ease)
+    }
+
+    #xh::before,
+    #xh::after {
+      content: "";
+      position: absolute;
+      background: var(--red)
+    }
+
+    #xh::before {
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      margin-left: -1px;
+      -webkit-mask: linear-gradient(#000 30%, transparent 30% 70%, #000 70%);
+      mask: linear-gradient(#000 30%, transparent 30% 70%, #000 70%)
+    }
+
+    #xh::after {
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      margin-top: -1px;
+      -webkit-mask: linear-gradient(90deg, #000 30%, transparent 30% 70%, #000 70%);
+      mask: linear-gradient(90deg, #000 30%, transparent 30% 70%, #000 70%)
+    }
+
+    #xh.big {
+      width: 46px;
+      height: 46px;
+      margin: -23px 0 0 -23px
+    }
+
+    #xh-dot {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      margin: -2.5px 0 0 -2.5px;
+      border-radius: 50%;
+      background: var(--ink);
+      pointer-events: none;
+      z-index: 997;
+      display: none;
+      transition: opacity .2s, transform .08s linear
+    }
+
+    @media(hover:hover) and (pointer:fine) {
+
+      #xh,
+      #xh-dot {
+        display: block
+      }
+
+      body,
+      a,
+      button,
+      input,
+      textarea,
+      .tab {
+        cursor: none
+      }
+    }
+
+    /* ============ PROGRESS BAR ============ */
+    #bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, var(--red-d), var(--red), #ff8a94);
+      z-index: 100;
+      box-shadow: 0 0 12px rgba(255, 70, 85, .8)
+    }
+
+    /* ============ NAV ============ */
     header {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 50;
-      background: rgba(15, 25, 35, .85);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(236, 232, 225, .1)
+      background: rgba(15, 25, 35, .82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(236, 232, 225, .1);
+      transition: background .3s, border-color .3s
+    }
+
+    header.small {
+      background: rgba(15, 25, 35, .96)
     }
 
     header .wrap {
@@ -126,50 +295,157 @@
 
     .logo {
       font: 800 26px "Barlow Condensed";
-      color: var(--red)
+      color: var(--red);
+      position: relative;
+      letter-spacing: .02em;
+      transition: text-shadow .3s
+    }
+
+    .logo:hover {
+      text-shadow: 0 0 18px rgba(255, 70, 85, .9)
     }
 
     nav {
       display: flex;
-      gap: 26px;
+      gap: 24px;
       align-items: center
     }
 
-    nav a {
+    nav a.lnk {
       font: 600 16px "Barlow Condensed";
       text-transform: uppercase;
       letter-spacing: .08em;
       color: var(--ink);
-      position: relative
+      position: relative;
+      padding: 4px 0
     }
 
-    nav a.on,
-    nav a:hover {
+    nav a.lnk::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      width: 0;
+      background: var(--red);
+      transition: width .3s var(--ease)
+    }
+
+    nav a.lnk:hover::after,
+    nav a.lnk.on::after {
+      width: 100%
+    }
+
+    nav a.lnk.on,
+    nav a.lnk:hover {
       color: var(--red)
+    }
+
+    /* ============ BUTTONS ============ */
+    .mag {
+      display: inline-block;
+      transition: transform .3s var(--ease);
+      will-change: transform
     }
 
     .btn {
       display: inline-block;
+      position: relative;
+      overflow: hidden;
       font: 800 18px "Barlow Condensed";
       text-transform: uppercase;
       letter-spacing: .08em;
-      padding: 12px 30px;
+      padding: 13px 32px;
       background: var(--red);
       color: var(--ink);
       clip-path: polygon(var(--cut) 0, 100% 0, 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, 0 100%, 0 var(--cut));
-      transition: background .2s, color .2s, transform .2s;
+      transition: background .25s var(--ease), color .25s var(--ease), transform .18s var(--ease), box-shadow .3s;
       cursor: pointer;
-      border: 0
+      border: 0;
+      isolation: isolate
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -130%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .55), transparent);
+      transform: skewX(-22deg);
+      transition: left .6s var(--ease);
+      pointer-events: none
+    }
+
+    .btn:hover::after {
+      left: 140%
     }
 
     .btn:hover {
       background: var(--ink);
       color: var(--navy);
-      transform: translateY(-2px)
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px -8px rgba(255, 70, 85, .8)
+    }
+
+    .btn:active {
+      transform: translateY(-1px) scale(.97)
     }
 
     .btn.ghost {
       background: rgba(236, 232, 225, .12)
+    }
+
+    .btn.ghost:hover {
+      background: var(--red);
+      color: var(--ink)
+    }
+
+    .btn.sm {
+      padding: 8px 22px;
+      font-size: 16px
+    }
+
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .4);
+      transform: scale(0);
+      animation: rip .65s var(--ease-out) forwards;
+      pointer-events: none;
+      z-index: 5
+    }
+
+    @keyframes rip {
+      to {
+        transform: scale(1);
+        opacity: 0
+      }
+    }
+
+    /* sound toggle */
+    .snd {
+      background: none;
+      border: 1px solid rgba(236, 232, 225, .25);
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+      transition: border-color .25s, background .25s, transform .2s;
+      font-size: 15px
+    }
+
+    .snd:hover {
+      border-color: var(--red);
+      background: rgba(255, 70, 85, .15);
+      transform: translateY(-2px)
+    }
+
+    .snd[aria-pressed="true"] {
+      border-color: var(--red);
+      color: var(--red)
     }
 
     #burger {
@@ -178,10 +454,15 @@
       border: 0;
       color: var(--ink);
       font-size: 28px;
-      cursor: pointer
+      cursor: pointer;
+      transition: color .2s, transform .2s
     }
 
-    @media(max-width:800px) {
+    #burger:hover {
+      color: var(--red)
+    }
+
+    @media(max-width:900px) {
       #burger {
         display: block
       }
@@ -192,44 +473,81 @@
         left: 0;
         right: 0;
         background: var(--navy);
+        border-bottom: 1px solid rgba(236, 232, 225, .1);
         flex-direction: column;
+        align-items: stretch;
         padding: 20px;
-        gap: 18px;
-        display: none
+        gap: 16px;
+        display: none;
+        animation: fade .3s
       }
 
       nav.open {
         display: flex
       }
+
+      nav a.lnk {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(236, 232, 225, .06)
+      }
+
+      .snd {
+        align-self: flex-start
+      }
     }
 
-    /* hero */
+    /* ============ HERO ============ */
     #hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
       position: relative;
-      padding-top: 100px
+      padding-top: 100px;
+      overflow: hidden
     }
 
     #hero .tag {
       color: var(--red);
       font: 600 18px "Barlow Condensed";
       letter-spacing: .12em;
-      min-height: 28px
+      min-height: 28px;
+      text-transform: uppercase
     }
 
     #hero h1 {
-      font-size: clamp(54px, 12vw, 140px);
-      margin: 12px 0
+      font-size: clamp(52px, 11.5vw, 140px);
+      margin: 12px 0;
+      position: relative;
+      will-change: transform
     }
 
     #hero h1 em {
       font-style: normal;
-      color: var(--red)
+      color: var(--red);
+      position: relative;
+      display: inline-block
     }
 
-    #hero p {
+    #hero h1 em::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      width: 100%;
+      height: 4px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: underline 1s var(--ease-out) 1.4s forwards
+    }
+
+    @keyframes underline {
+      to {
+        transform: scaleX(1)
+      }
+    }
+
+    #hero p.lead {
       max-width: 560px;
       color: var(--mute);
       margin-bottom: 30px;
@@ -251,7 +569,8 @@
       transform: translateY(-50%) rotate(45deg);
       border: 2px solid rgba(255, 70, 85, .35);
       z-index: -1;
-      animation: spin 40s linear infinite
+      animation: spin 40s linear infinite;
+      pointer-events: none
     }
 
     .glyph::after {
@@ -259,6 +578,13 @@
       position: absolute;
       inset: 14%;
       border: 2px solid rgba(255, 70, 85, .2)
+    }
+
+    .glyph::before {
+      content: "";
+      position: absolute;
+      inset: 30%;
+      border: 2px solid rgba(255, 70, 85, .14)
     }
 
     @keyframes spin {
@@ -276,7 +602,12 @@
 
     .stats div {
       border-left: 3px solid var(--red);
-      padding-left: 14px
+      padding-left: 14px;
+      transition: transform .3s var(--ease)
+    }
+
+    .stats div:hover {
+      transform: translateX(6px)
     }
 
     .stats b {
@@ -290,7 +621,106 @@
       font-size: 14px
     }
 
-    /* titles */
+    .scroll-cue {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--mute);
+      font: 600 13px "Barlow Condensed";
+      letter-spacing: .3em;
+      text-transform: uppercase
+    }
+
+    .scroll-cue i {
+      width: 2px;
+      height: 40px;
+      background: linear-gradient(var(--red), transparent);
+      animation: cue 1.8s ease-in-out infinite
+    }
+
+    @keyframes cue {
+
+      0%,
+      100% {
+        transform: scaleY(.35);
+        opacity: .4
+      }
+
+      50% {
+        transform: scaleY(1);
+        opacity: 1
+      }
+    }
+
+    @media(max-width:700px) {
+      .scroll-cue {
+        display: none
+      }
+    }
+
+    /* ============ MARQUEE ============ */
+    .marquee {
+      border-top: 1px solid rgba(236, 232, 225, .1);
+      border-bottom: 1px solid rgba(236, 232, 225, .1);
+      background: var(--navy2);
+      overflow: hidden;
+      padding: 16px 0;
+      display: flex;
+      user-select: none;
+      -webkit-mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+      mask: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)
+    }
+
+    .marquee ul {
+      display: flex;
+      gap: 44px;
+      list-style: none;
+      padding-right: 44px;
+      animation: slide 28s linear infinite;
+      flex-shrink: 0
+    }
+
+    .marquee:hover ul {
+      animation-play-state: paused
+    }
+
+    .marquee li {
+      font: 800 26px "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: rgba(236, 232, 225, .35);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 44px;
+      transition: color .25s
+    }
+
+    .marquee li::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--red);
+      transform: rotate(45deg);
+      flex: none
+    }
+
+    .marquee li:hover {
+      color: var(--red)
+    }
+
+    @keyframes slide {
+      to {
+        transform: translateX(-100%)
+      }
+    }
+
+    /* ============ TITLES ============ */
     .title {
       display: flex;
       align-items: center;
@@ -299,7 +729,13 @@
     }
 
     .title h2 {
-      font-size: clamp(34px, 6vw, 56px)
+      font-size: clamp(34px, 6vw, 56px);
+      white-space: nowrap
+    }
+
+    .title h2 i {
+      font-style: normal;
+      color: var(--red)
     }
 
     .title::after {
@@ -309,7 +745,13 @@
       background: linear-gradient(90deg, var(--red), transparent)
     }
 
-    /* about */
+    .sub {
+      color: var(--mute);
+      max-width: 620px;
+      margin: -22px 0 40px
+    }
+
+    /* ============ ABOUT ============ */
     .about {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -335,13 +777,21 @@
       border-left: 3px solid var(--red);
       font: 600 15px "Barlow Condensed";
       text-transform: uppercase;
-      letter-spacing: .06em
+      letter-spacing: .06em;
+      transition: transform .25s var(--ease), background .25s, color .25s
+    }
+
+    .skills span:hover {
+      transform: translateY(-4px);
+      background: var(--red);
+      color: var(--navy)
     }
 
     .photo {
       position: relative;
       max-width: 380px;
-      justify-self: center
+      justify-self: center;
+      transition: transform .5s var(--ease)
     }
 
     .photo::before {
@@ -349,7 +799,12 @@
       position: absolute;
       inset: 18px -18px -18px 18px;
       border: 2px solid var(--red);
-      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%)
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+      transition: inset .5s var(--ease)
+    }
+
+    .photo:hover::before {
+      inset: 12px -24px -24px 24px
     }
 
     .photo img {
@@ -359,7 +814,13 @@
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
       background: var(--navy2);
       aspect-ratio: 1;
-      object-fit: cover
+      object-fit: cover;
+      filter: grayscale(.35) contrast(1.05);
+      transition: filter .5s
+    }
+
+    .photo:hover img {
+      filter: none
     }
 
     @media(max-width:800px) {
@@ -368,7 +829,108 @@
       }
     }
 
-    /* tabs */
+    /* ============ SERVICES ============ */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px
+    }
+
+    .svc {
+      position: relative;
+      overflow: hidden;
+      background: var(--navy2);
+      padding: 30px 24px 34px;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 0 100%);
+      transition: transform .35s var(--ease), background .35s;
+      isolation: isolate
+    }
+
+    .svc::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(150deg, rgba(255, 70, 85, .18), transparent 60%);
+      opacity: 0;
+      transition: opacity .35s;
+      z-index: -1
+    }
+
+    .svc:hover {
+      transform: translateY(-8px);
+      background: var(--navy3)
+    }
+
+    .svc:hover::before {
+      opacity: 1
+    }
+
+    .svc .no {
+      font: 800 60px "Barlow Condensed";
+      color: rgba(255, 70, 85, .22);
+      line-height: 1;
+      display: block;
+      transition: color .35s, transform .35s var(--ease)
+    }
+
+    .svc:hover .no {
+      color: var(--red);
+      transform: translateX(6px)
+    }
+
+    .svc h3 {
+      font-size: 26px;
+      margin: 10px 0 10px
+    }
+
+    .svc p {
+      color: var(--mute);
+      font-size: 15px;
+      margin-bottom: 16px
+    }
+
+    .svc ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .svc li {
+      font: 600 14px "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #c9c5be;
+      padding-left: 16px;
+      position: relative
+    }
+
+    .svc li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      transform: rotate(45deg)
+    }
+
+    .svc .line {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0;
+      background: var(--red);
+      transition: width .45s var(--ease)
+    }
+
+    .svc:hover .line {
+      width: 100%
+    }
+
+    /* ============ TABS ============ */
     .tabs {
       display: flex;
       gap: 8px;
@@ -377,6 +939,8 @@
     }
 
     .tab {
+      position: relative;
+      overflow: hidden;
       font: 600 17px "Barlow Condensed";
       text-transform: uppercase;
       letter-spacing: .08em;
@@ -386,12 +950,16 @@
       border: 0;
       cursor: pointer;
       clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-      transition: background .2s
+      transition: background .25s var(--ease), transform .2s var(--ease), color .25s
     }
 
     .tab[aria-selected=true],
     .tab:hover {
       background: var(--red)
+    }
+
+    .tab:active {
+      transform: scale(.95)
     }
 
     .panel {
@@ -425,7 +993,13 @@
       padding-left: 24px;
       margin-bottom: 8px;
       position: relative;
-      color: #c9c5be
+      color: #c9c5be;
+      transition: color .25s, transform .25s var(--ease)
+    }
+
+    .panel li:hover {
+      color: var(--ink);
+      transform: translateX(5px)
     }
 
     .panel li::before {
@@ -446,7 +1020,7 @@
       }
     }
 
-    /* projects */
+    /* ============ PROJECTS ============ */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -458,33 +1032,76 @@
       overflow: hidden;
       position: relative;
       clip-path: polygon(0 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 0 100%);
-      transition: transform .25s;
-      transform-style: preserve-3d
+      transition: transform .25s var(--ease), box-shadow .35s;
+      transform-style: preserve-3d;
+      cursor: pointer
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(340px circle at var(--px, 50%) var(--py, 50%), rgba(255, 70, 85, .28), transparent 65%);
+      opacity: 0;
+      transition: opacity .35s;
+      pointer-events: none;
+      z-index: 3
+    }
+
+    .card:hover::before {
+      opacity: 1
+    }
+
+    .card:hover {
+      box-shadow: 0 22px 44px -20px rgba(0, 0, 0, .85)
     }
 
     .card .im {
       aspect-ratio: 16/10;
       overflow: hidden;
-      background: #162230
+      background: #162230;
+      position: relative
+    }
+
+    .card .im::after {
+      content: "VIEW →";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(15, 25, 35, .72);
+      color: var(--red);
+      font: 800 22px "Barlow Condensed";
+      letter-spacing: .2em;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .3s, transform .35s var(--ease)
+    }
+
+    .card:hover .im::after {
+      opacity: 1;
+      transform: none
     }
 
     .card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform .5s, filter .5s;
-      filter: grayscale(.6)
+      transition: transform .6s var(--ease), filter .5s;
+      filter: grayscale(.7)
     }
 
     .card:hover img {
-      transform: scale(1.07);
+      transform: scale(1.08);
       filter: none
     }
 
     .card .bd {
       padding: 16px 20px 24px;
       border-top: 3px solid transparent;
-      transition: border-color .2s
+      transition: border-color .3s;
+      position: relative;
+      z-index: 4
     }
 
     .card:hover .bd {
@@ -514,27 +1131,232 @@
       letter-spacing: .06em;
       padding: 2px 10px;
       background: rgba(255, 70, 85, .15);
-      color: var(--red)
+      color: var(--red);
+      transition: background .25s, color .25s
     }
 
-    /* achievements */
+    .card:hover .chips i {
+      background: rgba(255, 70, 85, .3)
+    }
+
+    /* ============ MODAL ============ */
+    #modal {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(8, 13, 19, .88);
+      backdrop-filter: blur(6px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s
+    }
+
+    #modal.open {
+      opacity: 1;
+      pointer-events: auto
+    }
+
+    .modal-box {
+      background: var(--navy2);
+      border-left: 4px solid var(--red);
+      max-width: 620px;
+      width: 100%;
+      padding: 32px;
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%);
+      transform: translateY(24px) scale(.97);
+      transition: transform .4s var(--ease-out);
+      max-height: 88vh;
+      overflow: auto
+    }
+
+    #modal.open .modal-box {
+      transform: none
+    }
+
+    .modal-box h3 {
+      font-size: 38px;
+      margin-bottom: 6px
+    }
+
+    .modal-box .meta {
+      color: var(--red);
+      font: 600 16px "Barlow Condensed";
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 18px
+    }
+
+    .modal-box p {
+      color: var(--mute);
+      margin-bottom: 18px
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(236, 232, 225, .1);
+      border: 0;
+      width: 36px;
+      height: 36px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background .25s, transform .25s
+    }
+
+    .modal-close:hover {
+      background: var(--red);
+      transform: rotate(90deg)
+    }
+
+    /* ============ SKILLS BARS ============ */
+    .bars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px 44px
+    }
+
+    .skill-h {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font: 600 17px "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px
+    }
+
+    .skill-h b {
+      color: var(--red);
+      font-size: 16px
+    }
+
+    .track {
+      height: 6px;
+      background: rgba(236, 232, 225, .1);
+      overflow: hidden;
+      position: relative
+    }
+
+    .track i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--red-d), var(--red));
+      transition: width 1.2s var(--ease-out);
+      position: relative;
+      box-shadow: 0 0 14px rgba(255, 70, 85, .7)
+    }
+
+    /* ============ TIMELINE ============ */
+    .tl {
+      position: relative;
+      padding-left: 34px
+    }
+
+    .tl::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(var(--red), rgba(255, 70, 85, .05))
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 34px 0
+    }
+
+    .tl-item::before {
+      content: "";
+      position: absolute;
+      left: -34px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      background: var(--navy);
+      border: 2px solid var(--red);
+      transform: rotate(45deg);
+      transition: background .3s, transform .3s var(--ease)
+    }
+
+    .tl-item:hover::before {
+      background: var(--red);
+      transform: rotate(135deg) scale(1.2)
+    }
+
+    .tl-item b {
+      font: 800 22px "Barlow Condensed";
+      color: var(--red);
+      letter-spacing: .06em;
+      display: block
+    }
+
+    .tl-item h4 {
+      font-size: 24px;
+      margin: 2px 0 6px
+    }
+
+    .tl-item p {
+      color: var(--mute);
+      font-size: 15px;
+      max-width: 620px
+    }
+
+    /* ============ ACHIEVEMENTS ============ */
     .ach {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px
     }
 
-    .ach div {
+    .ach>div {
       background: var(--navy2);
       padding: 24px;
-      border-top: 3px solid var(--red)
+      border-top: 3px solid var(--red);
+      position: relative;
+      overflow: hidden;
+      transition: transform .35s var(--ease), background .35s
+    }
+
+    .ach>div::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 90px;
+      height: 90px;
+      border: 2px solid rgba(255, 70, 85, .3);
+      transform: rotate(45deg);
+      transition: transform .5s var(--ease), border-color .4s
+    }
+
+    .ach>div:hover {
+      transform: translateY(-7px);
+      background: var(--navy3)
+    }
+
+    .ach>div:hover::after {
+      transform: rotate(135deg) scale(1.25);
+      border-color: var(--red)
     }
 
     .ach b {
       font: 800 54px "Barlow Condensed";
       color: rgba(255, 70, 85, .5);
       display: block;
-      line-height: 1
+      line-height: 1;
+      transition: color .35s
+    }
+
+    .ach>div:hover b {
+      color: var(--red)
     }
 
     .ach h3 {
@@ -546,19 +1368,106 @@
       color: var(--mute)
     }
 
-    /* contact */
+    /* ============ FAQ ============ */
+    .faq {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 820px
+    }
+
+    .faq-item {
+      background: var(--navy2);
+      border-left: 3px solid rgba(255, 70, 85, .35);
+      transition: border-color .3s, background .3s
+    }
+
+    .faq-item.open {
+      border-color: var(--red);
+      background: var(--navy3)
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: 0;
+      text-align: left;
+      padding: 20px 22px;
+      font: 800 20px "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: color .25s
+    }
+
+    .faq-q:hover {
+      color: var(--red)
+    }
+
+    .faq-q span {
+      flex: none;
+      width: 22px;
+      height: 22px;
+      position: relative
+    }
+
+    .faq-q span::before,
+    .faq-q span::after {
+      content: "";
+      position: absolute;
+      background: var(--red);
+      transition: transform .35s var(--ease)
+    }
+
+    .faq-q span::before {
+      top: 10px;
+      left: 0;
+      width: 22px;
+      height: 2px
+    }
+
+    .faq-q span::after {
+      left: 10px;
+      top: 0;
+      width: 2px;
+      height: 22px
+    }
+
+    .faq-item.open .faq-q span::after {
+      transform: rotate(90deg) scaleX(0)
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s var(--ease-out)
+    }
+
+    .faq-a p {
+      padding: 0 22px 22px;
+      color: var(--mute);
+      font-size: 15.5px
+    }
+
+    /* ============ CONTACT ============ */
     #contact {
       text-align: center
     }
 
     #contact h2 {
-      font-size: clamp(50px, 11vw, 120px);
+      font-size: clamp(46px, 10vw, 116px);
       margin-bottom: 16px
     }
 
-    #contact p {
-      max-width: 520px;
-      margin: 0 auto 30px;
+    #contact .lead {
+      max-width: 540px;
+      margin: 0 auto 34px;
       color: var(--mute)
     }
 
@@ -566,7 +1475,7 @@
       display: flex;
       gap: 22px;
       justify-content: center;
-      margin-top: 34px;
+      margin-top: 40px;
       flex-wrap: wrap
     }
 
@@ -574,26 +1483,215 @@
       font: 600 17px "Barlow Condensed";
       text-transform: uppercase;
       letter-spacing: .1em;
-      color: var(--mute)
+      color: var(--mute);
+      position: relative;
+      padding-bottom: 3px;
+      transition: color .25s, transform .25s var(--ease)
+    }
+
+    .soc a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--red);
+      transition: width .3s var(--ease)
     }
 
     .soc a:hover {
-      color: var(--red)
+      color: var(--red);
+      transform: translateY(-3px)
     }
 
+    .soc a:hover::after {
+      width: 100%
+    }
+
+    form {
+      max-width: 620px;
+      margin: 0 auto;
+      text-align: left;
+      display: grid;
+      gap: 16px
+    }
+
+    .field {
+      position: relative
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: var(--navy2);
+      border: 1px solid rgba(236, 232, 225, .12);
+      color: var(--ink);
+      font: 400 16px Barlow, sans-serif;
+      padding: 15px 16px;
+      transition: border-color .25s, background .25s, box-shadow .25s;
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 130px
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: var(--red);
+      background: var(--navy3);
+      box-shadow: 0 0 0 3px rgba(255, 70, 85, .15)
+    }
+
+    .field.err input,
+    .field.err textarea {
+      border-color: #ff8a94;
+      animation: shake .35s
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translateX(0)
+      }
+
+      25% {
+        transform: translateX(-6px)
+      }
+
+      75% {
+        transform: translateX(6px)
+      }
+    }
+
+    .field em {
+      display: block;
+      font: 600 13px "Barlow Condensed";
+      letter-spacing: .06em;
+      color: #ff8a94;
+      text-transform: uppercase;
+      margin-top: 5px;
+      min-height: 0;
+      opacity: 0;
+      transition: opacity .25s
+    }
+
+    .field.err em {
+      opacity: 1
+    }
+
+    .form-note {
+      font: 600 15px "Barlow Condensed";
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--red);
+      min-height: 22px;
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .form-note.on {
+      opacity: 1
+    }
+
+    /* ============ FOOTER / TOP ============ */
     footer {
       text-align: center;
-      padding: 28px;
+      padding: 30px 20px;
       color: var(--mute);
       font-size: 14px;
       border-top: 1px solid rgba(236, 232, 225, .1)
     }
 
-    /* reveal + cursor + progress */
+    footer b {
+      color: var(--red)
+    }
+
+    #top {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      color: var(--ink);
+      border: 0;
+      font-size: 20px;
+      cursor: pointer;
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity .35s, transform .35s var(--ease), background .25s;
+      z-index: 60
+    }
+
+    #top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none
+    }
+
+    #top:hover {
+      background: var(--ink);
+      color: var(--navy);
+      transform: translateY(-5px)
+    }
+
+    /* ============ ACE FLASH ============ */
+    #ace {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: grid;
+      place-items: center;
+      background: var(--red);
+      color: var(--navy);
+      font: 800 clamp(60px, 18vw, 200px)/1 "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s
+    }
+
+    #ace.on {
+      opacity: 1;
+      animation: aceflash .9s forwards
+    }
+
+    @keyframes aceflash {
+      0% {
+        opacity: 0;
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%)
+      }
+
+      20% {
+        opacity: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)
+      }
+
+      80% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0)
+      }
+    }
+
+    /* ============ REVEAL ============ */
     .rv {
       opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .6s, transform .6s
+      transform: translateY(28px);
+      transition: opacity .7s var(--ease-out), transform .7s var(--ease-out)
     }
 
     .rv.in {
@@ -601,78 +1699,30 @@
       transform: none
     }
 
-    #bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      background: var(--red);
-      z-index: 100
+    .rv.d1 {
+      transition-delay: .08s
     }
 
-    #xh {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 26px;
-      height: 26px;
-      margin: -13px 0 0 -13px;
-      pointer-events: none;
-      z-index: 998;
-      display: none;
-      transition: width .15s, height .15s, margin .15s
+    .rv.d2 {
+      transition-delay: .16s
     }
 
-    #xh::before,
-    #xh::after {
-      content: "";
-      position: absolute;
-      background: var(--red)
+    .rv.d3 {
+      transition-delay: .24s
     }
 
-    #xh::before {
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      margin-left: -1px;
-      -webkit-mask: linear-gradient(#000 30%, transparent 30% 70%, #000 70%);
-      mask: linear-gradient(#000 30%, transparent 30% 70%, #000 70%)
-    }
-
-    #xh::after {
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 2px;
-      margin-top: -1px;
-      -webkit-mask: linear-gradient(90deg, #000 30%, transparent 30% 70%, #000 70%);
-      mask: linear-gradient(90deg, #000 30%, transparent 30% 70%, #000 70%)
-    }
-
-    #xh.big {
-      width: 44px;
-      height: 44px;
-      margin: -22px 0 0 -22px
-    }
-
-    @media(hover:hover) and (pointer:fine) {
-      #xh {
-        display: block
-      }
-
-      body,
-      a,
-      button {
-        cursor: none
-      }
+    .rv.d4 {
+      transition-delay: .32s
     }
 
     @media(prefers-reduced-motion:reduce) {
-      * {
-        animation: none !important;
-        transition: none !important
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .001ms !important
       }
 
       .rv {
@@ -683,51 +1733,82 @@
       html {
         scroll-behavior: auto
       }
+
+      #fx {
+        display: none
+      }
     }
   </style>
 </head>
 
 <body>
-  <div id="intro"><b>Azkazikna</b></div>
+  <!-- ===== LOADER ===== -->
+  <div id="intro">
+    <div class="intro-in">
+      <b>Azkazikna</b>
+      <div class="intro-bar"><i id="introFill"></i></div>
+      <span id="pct">0%</span>
+    </div>
+  </div>
+
   <div id="bar"></div>
   <div id="xh"></div>
+  <div id="xh-dot"></div>
+  <canvas id="fx"></canvas>
+  <div id="ace">ACE</div>
 
-  <header>
+  <!-- ===== HEADER ===== -->
+  <header id="hdr">
     <div class="wrap">
-      <a href="#hero" class="logo">AZKA//</a>
+      <a href="#hero" class="logo" data-snd="hover">AZKA//</a>
       <button id="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
       <nav id="nav">
-        <a href="#about">About</a><a href="#work">Experience</a><a href="#built">Work</a><a
-          href="#achievement">Achievement</a><a href="#contact">Contact</a>
-        <a class="btn" href="dist/pdf/resume.pdf" style="padding:8px 22px;font-size:16px">Resume</a>
+        <a class="lnk" href="#about">About</a>
+        <a class="lnk" href="#services">Services</a>
+        <a class="lnk" href="#work">Experience</a>
+        <a class="lnk" href="#built">Work</a>
+        <a class="lnk" href="#journey">Journey</a>
+        <a class="lnk" href="#contact">Contact</a>
+        <button class="snd" id="sndBtn" aria-pressed="false" title="Toggle sound (SFX)">🔇</button>
+        <a class="btn sm" href="dist/pdf/resume.pdf" data-snd="hover">Resume</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- ===== HERO ===== -->
     <section id="hero">
       <div class="wrap">
-        <div class="glyph"></div>
+        <div class="glyph" data-parallax="0.06"></div>
         <p class="tag" id="typed"></p>
-        <h1>Azkazikna<br>Ageung <em>Laksana</em></h1>
-        <p>Fullstack Web Developer from Bogor, Indonesia. I build clean, fast and user-friendly websites with HTML, CSS,
-          JavaScript, and PHP.</p>
+        <h1 data-parallax="0.02">Azkazikna<br>Ageung <em>Laksana</em></h1>
+        <p class="lead">Fullstack Web Developer from Bogor, Indonesia. I build clean, fast and user-friendly websites
+          with HTML, CSS, JavaScript, and PHP.</p>
         <div class="cta">
-          <a class="btn" href="#built">View work</a>
-          <a class="btn ghost" href="dist/pdf/resume.pdf">Download CV</a>
+          <span class="mag"><a class="btn" href="#built" data-snd="click">View work</a></span>
+          <span class="mag"><a class="btn ghost" href="dist/pdf/resume.pdf" data-snd="click">Download CV</a></span>
         </div>
         <div class="stats">
           <div><b data-n="12">0</b><span>Projects built</span></div>
           <div><b data-n="3">0</b><span>Years of coding</span></div>
           <div><b data-n="8">0</b><span>Certificates</span></div>
+          <div><b data-n="5">0</b><span>Tech stacks</span></div>
         </div>
       </div>
+      <div class="scroll-cue"><i></i>Scroll</div>
     </section>
 
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee" aria-hidden="true">
+      <ul id="mq1"></ul>
+      <ul id="mq2"></ul>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
     <section id="about">
       <div class="wrap">
         <div class="title rv">
-          <h2>About me</h2>
+          <h2 data-scramble>About <i>me</i></h2>
         </div>
         <div class="about rv">
           <div>
@@ -736,20 +1817,79 @@
               coding, and I still want to go further.</p>
             <p>Right now I'm exploring Laravel. I keep sharpening my problem-solving and engineering skills in every
               project.</p>
-            <div class="skills"><span>JavaScript ES6+</span><span>Tailwind
-                CSS</span><span>Bootstrap</span><span>CodeIgniter</span><span>Laravel</span><span>WordPress</span><span>Figma</span>
+            <div class="skills">
+              <span>JavaScript ES6+</span><span>Tailwind CSS</span><span>Bootstrap</span><span>CodeIgniter</span>
+              <span>Laravel</span><span>WordPress</span><span>Figma</span><span>Git</span>
             </div>
           </div>
-          <div class="photo"><img src="dist/img/azka.webp" alt="Azkazikna" loading="lazy"
-              onerror="this.style.visibility='hidden'"></div>
+          <div class="photo">
+            <img src="dist/img/azka.webp" alt="Azkazikna" loading="lazy" onerror="this.style.visibility='hidden'">
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+      <div class="wrap">
+        <div class="title rv">
+          <h2 data-scramble>What I <i>do</i></h2>
+        </div>
+        <p class="sub rv">From pixel-perfect interfaces to the logic behind them — here's how I can help.</p>
+        <div class="svc-grid">
+          <article class="svc rv d1" data-snd="hover">
+            <span class="no">01</span>
+            <h3>Frontend Development</h3>
+            <p>Fast, accessible and responsive interfaces that feel alive.</p>
+            <ul>
+              <li>HTML5 &amp; semantic markup</li>
+              <li>Tailwind / Bootstrap</li>
+              <li>Vanilla JS &amp; animations</li>
+            </ul>
+            <span class="line"></span>
+          </article>
+          <article class="svc rv d2" data-snd="hover">
+            <span class="no">02</span>
+            <h3>Backend Development</h3>
+            <p>Clean server-side logic, database design and secure authentication.</p>
+            <ul>
+              <li>PHP &amp; CodeIgniter</li>
+              <li>Laravel (learning)</li>
+              <li>MySQL &amp; REST APIs</li>
+            </ul>
+            <span class="line"></span>
+          </article>
+          <article class="svc rv d3" data-snd="hover">
+            <span class="no">03</span>
+            <h3>UI / UX Design</h3>
+            <p>Wireframes to high-fidelity mockups with a focus on clarity.</p>
+            <ul>
+              <li>Figma prototyping</li>
+              <li>Design systems</li>
+              <li>Responsive layouts</li>
+            </ul>
+            <span class="line"></span>
+          </article>
+          <article class="svc rv d4" data-snd="hover">
+            <span class="no">04</span>
+            <h3>Landing Page &amp; CMS</h3>
+            <p>Conversion-focused pages and easy-to-manage WordPress sites.</p>
+            <ul>
+              <li>WordPress theming</li>
+              <li>SEO basics</li>
+              <li>Performance tuning</li>
+            </ul>
+            <span class="line"></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
     <section id="work">
       <div class="wrap">
         <div class="title rv">
-          <h2>Where I have worked</h2>
+          <h2 data-scramble>Where I've <i>worked</i></h2>
         </div>
         <div class="rv">
           <div class="tabs" role="tablist" id="jobTabs"></div>
@@ -758,31 +1898,83 @@
       </div>
     </section>
 
+    <!-- ===== PROJECTS ===== -->
     <section id="built">
       <div class="wrap">
         <div class="title rv">
-          <h2>Some things I've built</h2>
+          <h2 data-scramble>Some things I've <i>built</i></h2>
         </div>
         <div class="tabs rv" id="filters"></div>
         <div class="grid" id="grid"></div>
       </div>
     </section>
 
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="title rv">
+          <h2 data-scramble>Tech <i>arsenal</i></h2>
+        </div>
+        <div class="bars rv" id="bars"></div>
+      </div>
+    </section>
+
+    <!-- ===== JOURNEY ===== -->
+    <section id="journey">
+      <div class="wrap">
+        <div class="title rv">
+          <h2 data-scramble>The <i>journey</i></h2>
+        </div>
+        <div class="tl" id="tl"></div>
+      </div>
+    </section>
+
+    <!-- ===== ACHIEVEMENTS ===== -->
     <section id="achievement">
       <div class="wrap">
         <div class="title rv">
-          <h2>Noteworthy achievement</h2>
+          <h2 data-scramble>Noteworthy <i>achievement</i></h2>
         </div>
         <div class="ach" id="ach"></div>
       </div>
     </section>
 
+    <!-- ===== FAQ ===== -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="title rv">
+          <h2 data-scramble>Frequently <i>asked</i></h2>
+        </div>
+        <div class="faq rv" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
     <section id="contact">
       <div class="wrap rv">
-        <h2>Get in touch</h2>
-        <p>I'm not looking for new opportunities right now, but my inbox is always open. Have a question or just want to
-          say hi? I'll try my best to reply.</p>
-        <a class="btn" href="https://www.instagram.com/azkazikna/" target="_blank" rel="noopener">Say hello</a>
+        <h2 data-scramble>Get in <i>touch</i></h2>
+        <p class="lead">I'm not looking for new opportunities right now, but my inbox is always open. Have a question or
+          just want to say hi? I'll try my best to reply.</p>
+
+        <form id="cform" novalidate>
+          <div class="field">
+            <input type="text" name="name" id="fname" placeholder="Your name" autocomplete="name">
+            <em>Please tell me your name</em>
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="femail" placeholder="your@email.com" autocomplete="email">
+            <em>That email doesn't look right</em>
+          </div>
+          <div class="field">
+            <textarea name="msg" id="fmsg" placeholder="Tell me about your project..."></textarea>
+            <em>Message needs at least 10 characters</em>
+          </div>
+          <div class="cta" style="justify-content:center">
+            <span class="mag"><button class="btn" type="submit" data-snd="click">Send message</button></span>
+          </div>
+          <p class="form-note" id="note"></p>
+        </form>
+
         <div class="soc">
           <a href="https://github.com/Azkazikna" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/azkazikna/" target="_blank" rel="noopener">LinkedIn</a>
@@ -793,140 +1985,748 @@
       </div>
     </section>
   </main>
-  <footer>Built by Azkazikna Ageung Laksana. Inspired by VALORANT.</footer>
+
+  <footer>Built by <b>Azkazikna Ageung Laksana</b>. Inspired by VALORANT.</footer>
+
+  <button id="top" aria-label="Back to top">↑</button>
+
+  <!-- ===== MODAL ===== -->
+  <div id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="mClose" aria-label="Close">✕</button>
+      <h3 id="mTitle"></h3>
+      <p class="meta" id="mMeta"></p>
+      <p id="mDesc"></p>
+      <div class="chips" id="mChips"></div>
+    </div>
+  </div>
 
   <script>
     (() => {
-      const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
-      let io;
+      "use strict";
+      const $ = (s, r = document) => r.querySelector(s);
+      const $$ = (s, r = document) => [...r.querySelectorAll(s)];
       const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+      const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+      const clamp = (v, a, b) => Math.min(Math.max(v, a), b);
+      const lerp = (a, b, t) => a + (b - a) * t;
 
-      /* ---- DATA ---- */
+      /* =========================================================
+         1. DATA
+      ========================================================= */
       const jobs = [
         {
-          tab: "Freelance", role: "Fullstack Web Developer", at: "@Freelance", date: "Jun 2021 - Present", pts: [
+          tab: "Freelance", role: "Fullstack Web Developer", at: "@Freelance", date: "Jun 2021 - Present",
+          pts: [
             'Built a news website "Youth of the Nation" with WordPress.',
             "Built a Laboratory Information Management System (LIMS) for Delta Indonesia Lab.",
             'Built "Found and Lost", a social-media style web app for posting found and lost items.',
-            'Built "Command Control Center Polsek Cibarusah", a service app for the Cibarusah police.']
+            'Built "Command Control Center Polsek Cibarusah", a service app for the Cibarusah police.'
+          ]
         },
         {
-          tab: "Internship JGU", role: "Web Developer", at: "@Jakarta Global University", date: "Jan 2021 - Aug 2021", pts: [
+          tab: "Internship JGU", role: "Web Developer", at: "@Jakarta Global University", date: "Jan 2021 - Aug 2021",
+          pts: [
             "Created a landing page for the Informatics Engineering major.",
             "Fixed bugs in web applications.",
             "Built a lecturer scheduling app using the software development life cycle.",
             "Built a lecturer workload app together with the team.",
-            "Owned the transcript printing application."]
-        }];
-      const P = (t, k, y, s, i) => ({ t, k, y, s, i });
+            "Owned the transcript printing application."
+          ]
+        }
+      ];
+
+      const P = (t, k, y, s, i, d) => ({ t, k, y, s, i, d });
       const projects = [
-        P("Professional Certification Registration", "Fullstack", 2021, ["CodeIgniter", "Bootstrap", "GSAP", "PHPMailer"], "lsp.webp"),
-        P("Lost and Found", "Fullstack", 2022, ["CodeIgniter", "Bootstrap", "PHPMailer"], "lostandfound.svg"),
-        P("Library JGU", "Fullstack", 2022, ["CodeIgniter", "Tailwind", "GSAP", "Figma"], "libraryJGU.webp"),
-        P("E-Voting PENUS", "Fullstack", 2022, ["CodeIgniter", "Bootstrap"], "evoting.webp"),
-        P("Lecturer's Workload App", "Fullstack", 2022, ["CodeIgniter", "Bootstrap"], "abkd.webp"),
-        P("Personal Portfolio", "Frontend", 2022, ["Tailwind", "Figma"], "portfolio-tailwind.webp"),
-        P("Web3 Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "web3.webp"),
-        P("Real Estate Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "real-estate.webp"),
-        P("FoodHub Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "foodhub.webp"),
-        P("Survive Adventure Landing Page", "Frontend", 2022, ["Bootstrap"], "surviveweb.webp"),
-        P("HaiDoc Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "haidoc.webp")];
+        P("Professional Certification Registration", "Fullstack", 2021, ["CodeIgniter", "Bootstrap", "GSAP", "PHPMailer"], "lsp.webp",
+          "A registration platform for professional certification exams — candidate data, scheduling, document upload and automated email notifications."),
+        P("Lost and Found", "Fullstack", 2022, ["CodeIgniter", "Bootstrap", "PHPMailer"], "lostandfound.svg",
+          "A social-media style web app where people post items they lost or found, with categories, search and direct contact."),
+        P("Library JGU", "Fullstack", 2022, ["CodeIgniter", "Tailwind", "GSAP", "Figma"], "libraryJGU.webp",
+          "Digital library management for Jakarta Global University: catalog, borrowing records and a clean animated reader UI."),
+        P("E-Voting PENUS", "Fullstack", 2022, ["CodeIgniter", "Bootstrap"], "evoting.webp",
+          "An electronic voting system built for the PENUS campus election, with one-vote-per-token validation and live results."),
+        P("Lecturer's Workload App", "Fullstack", 2022, ["CodeIgniter", "Bootstrap"], "abkd.webp",
+          "Calculates and reports lecturer teaching workload (ABKD) across semesters, replacing a slow manual spreadsheet flow."),
+        P("Personal Portfolio", "Frontend", 2022, ["Tailwind", "Figma"], "portfolio-tailwind.webp",
+          "My own portfolio site — designed in Figma and built with Tailwind CSS, focusing on typography and motion."),
+        P("Web3 Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "web3.webp",
+          "A dark, futuristic landing page concept for a Web3 product, with gradient meshes and scroll animations."),
+        P("Real Estate Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "real-estate.webp",
+          "Property listing landing page with a filterable card grid and a clean, trust-building layout."),
+        P("FoodHub Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "foodhub.webp",
+          "Food delivery landing page with an appetising hero, menu highlights and a sticky order CTA."),
+        P("Survive Adventure Landing Page", "Frontend", 2022, ["Bootstrap"], "surviveweb.webp",
+          "Outdoor adventure tour landing page with an image-driven hero and package cards."),
+        P("HaiDoc Landing Page", "Frontend", 2022, ["Tailwind", "Figma"], "haidoc.webp",
+          "Health consultation landing page with a friendly tone, doctor cards and appointment CTA.")
+      ];
+
       const ach = [
         ["2022", "Best Participant of DTS VSGA Online Training", "Certificate"],
         ["2022", 'The First Best Student of "Software Engineering"', "Pelita Nusantara Vocational High School"],
         ["2022", 'The First Best Student of the Year "Software Engineering"', "Pelita Nusantara Vocational High School"],
         ["2021", "Dicoding: JavaScript, Web & Front-End Fundamentals", "Dicoding Certificates"],
-        ["2021", "HTML and CSS Courses", "SoloLearn Certificates"]];
+        ["2021", "HTML and CSS Courses", "SoloLearn Certificates"]
+      ];
 
-      /* ---- INTRO ---- */
-      const intro = $('#intro');
-      const hide = () => { intro.classList.add('go'); setTimeout(() => intro.remove(), 800); startTyping(); };
-      addEventListener('load', () => setTimeout(hide, reduce ? 0 : 500));
-      setTimeout(() => intro.isConnected && hide(), 2500); // jaring pengaman jika ada aset lambat
+      const skillsData = [
+        ["HTML & CSS", 95], ["JavaScript ES6+", 88], ["PHP / CodeIgniter", 85],
+        ["Tailwind CSS", 90], ["Bootstrap", 88], ["MySQL", 80],
+        ["Figma / UI Design", 78], ["Laravel", 62]
+      ];
 
-      /* ---- TYPED ---- */
+      const timeline = [
+        ["2019", "Started Software Engineering", "Enrolled at Pelita Nusantara Vocational High School and wrote my first line of HTML."],
+        ["2021", "Web Developer Intern", "Joined Jakarta Global University — landing pages, bug fixing and internal apps."],
+        ["2021", "Went Freelance", "Started building client projects: news portals, LIMS, lost & found, police service apps."],
+        ["2022", "First Best Student", "Graduated as the top student of the Software Engineering major, plus national certifications."],
+        ["2024", "Leveling Up", "Deep-diving Laravel, clean architecture and better front-end motion design."]
+      ];
+
+      const faqs = [
+        ["What do you actually do?", "I build websites end to end — designing the interface, writing the front-end, and wiring up the back-end and database. I'm happiest when a project lets me touch all three."],
+        ["Are you available for freelance work?", "I'm not actively looking for new opportunities right now, but I always read my messages. If the project is interesting, there's a good chance I'll say yes."],
+        ["What tech stack do you use?", "Day to day: HTML, CSS (Tailwind or Bootstrap), vanilla JavaScript, PHP with CodeIgniter, and MySQL. I'm currently exploring Laravel and modern tooling."],
+        ["How long does a typical project take?", "A landing page usually takes 3–7 days. A full web app with authentication, dashboards and a database typically runs 3–6 weeks depending on scope."],
+        ["Do you work remotely?", "Yes — I'm based in Bogor, Indonesia (GMT+7) and work remotely with clients and teams across different time zones."]
+      ];
+
+      const stack = ["HTML5", "CSS3", "JavaScript", "PHP", "CodeIgniter", "Laravel", "Tailwind", "Bootstrap", "MySQL",
+        "WordPress", "Figma", "Git", "GSAP"];
+
+      /* =========================================================
+         2. SOUND ENGINE (Web Audio — no assets)
+      ========================================================= */
+      const Sound = (() => {
+        let ctx = null, on = false;
+        const ensure = () => {
+          if (!ctx) { const AC = window.AudioContext || window.webkitAudioContext; if (AC) ctx = new AC(); }
+          if (ctx && ctx.state === 'suspended') ctx.resume();
+          return ctx;
+        };
+        function blip(freq = 520, dur = .07, type = 'square', gain = .035) {
+          if (!on) return;
+          const c = ensure(); if (!c) return;
+          const o = c.createOscillator(), g = c.createGain();
+          o.type = type; o.frequency.setValueAtTime(freq, c.currentTime);
+          o.frequency.exponentialRampToValueAtTime(freq * .6, c.currentTime + dur);
+          g.gain.setValueAtTime(gain, c.currentTime);
+          g.gain.exponentialRampToValueAtTime(.0001, c.currentTime + dur);
+          o.connect(g); g.connect(c.destination);
+          o.start(); o.stop(c.currentTime + dur + .02);
+        }
+        return {
+          toggle() { on = !on; if (on) { ensure(); blip(760, .09, 'square', .05); } return on; },
+          get state() { return on; },
+          hover() { blip(620, .045, 'square', .018); },
+          click() { blip(340, .1, 'sawtooth', .04); setTimeout(() => blip(680, .07, 'square', .03), 55); },
+          open() { blip(300, .12, 'triangle', .05); }
+        };
+      })();
+
+      const sndBtn = $('#sndBtn');
+      sndBtn.addEventListener('click', () => {
+        const on = Sound.toggle();
+        sndBtn.setAttribute('aria-pressed', on);
+        sndBtn.textContent = on ? '🔊' : '🔇';
+      });
+
+      // delegated sound
+      document.addEventListener('pointerenter', e => {
+        const t = e.target.closest?.('[data-snd="hover"]');
+        if (t) Sound.hover();
+      }, true);
+      document.addEventListener('click', e => {
+        if (e.target.closest?.('[data-snd="click"], .btn, .tab')) Sound.click();
+      });
+
+      /* =========================================================
+         3. LOADER
+      ========================================================= */
+      (function loader() {
+        const intro = $('#intro'), fill = $('#introFill'), pct = $('#pct');
+        let p = 0, done = false;
+        const finish = () => {
+          if (done) return; done = true;
+          fill.style.width = '100%'; pct.textContent = '100%';
+          setTimeout(() => {
+            intro.classList.add('go');
+            setTimeout(() => intro.remove(), 900);
+            startTyping();
+          }, reduce ? 0 : 220);
+        };
+        if (reduce) { finish(); return; }
+        const t = setInterval(() => {
+          p += Math.random() * 14 + 4;
+          if (p >= 100) { p = 100; clearInterval(t); finish(); }
+          fill.style.width = p + '%';
+          pct.textContent = Math.floor(p) + '%';
+        }, 110);
+        addEventListener('load', () => setTimeout(finish, 900));
+        setTimeout(finish, 4200); // safety net
+      })();
+
+      /* =========================================================
+         4. TYPEWRITER
+      ========================================================= */
       let typed = false;
       function startTyping() {
         if (typed) return; typed = true;
-        const el = $('#typed'), w = ["Fullstack Web Developer", "UI/UX Enthusiast", "Laravel Explorer", "Problem Solver"];
+        const el = $('#typed');
+        if (!el) return;
+        const words = ["Fullstack Web Developer", "UI/UX Enthusiast", "Laravel Explorer", "Problem Solver"];
         let i = 0, j = 0, del = false;
         (function tick() {
-          const s = w[i]; el.textContent = '> ' + s.slice(0, j) + (j % 2 || del ? '_' : ' ');
-          if (!del && j === s.length) { del = true; return setTimeout(tick, 1400) }
-          if (del && j === 0) { del = false; i = (i + 1) % w.length }
-          j += del ? -1 : 1; setTimeout(tick, del ? 35 : 70);
+          const s = words[i];
+          el.textContent = '> ' + s.slice(0, j) + (j % 2 || del ? '_' : ' ');
+          if (!del && j === s.length) { del = true; return setTimeout(tick, 1400); }
+          if (del && j === 0) { del = false; i = (i + 1) % words.length; }
+          j += del ? -1 : 1;
+          setTimeout(tick, del ? 32 : 68);
         })();
       }
 
-      /* ---- JOBS ---- */
-      const jt = $('#jobTabs'), jp = $('#jobPanel');
-      function showJob(n) {
-        $$('.tab', jt).forEach((b, i) => b.setAttribute('aria-selected', i === n));
-        const j = jobs[n];
-        jp.innerHTML = `<h3>${j.role} <span>${j.at}</span></h3><small>${j.date}</small><ul>${j.pts.map(p => `<li>${p}</li>`).join('')}</ul>`;
-        jp.style.animation = 'none'; jp.offsetHeight; jp.style.animation = '';
-      }
-      jobs.forEach((j, i) => { const b = document.createElement('button'); b.className = 'tab'; b.role = 'tab'; b.textContent = j.tab; b.onclick = () => showJob(i); jt.append(b) });
-      showJob(0);
+      /* =========================================================
+         5. CUSTOM CURSOR (crosshair + trailing dot)
+      ========================================================= */
+      if (fine && !reduce) {
+        const xh = $('#xh'), dot = $('#xh-dot');
+        let mx = innerWidth / 2, my = innerHeight / 2, dx = mx, dy = my, rx = mx, ry = my;
 
-      /* ---- PROJECTS ---- */
-      const grid = $('#grid'), fl = $('#filters');
-      function render(f) {
-        grid.innerHTML = projects.filter(p => f === 'All' || p.k === f).map(p => `
-  <article class="card rv">
-    <div class="im"><img loading="lazy" decoding="async" src="dist/img/project/${p.i}" alt="${p.t}" onerror="this.style.display='none'"></div>
-    <div class="bd"><h3>${p.t}</h3><small>${p.k} &bull; ${p.y}</small><div class="chips">${p.s.map(s => `<i>${s}</i>`).join('')}</div></div>
-  </article>`).join('');
-        observe(); tilt();
+        addEventListener('mousemove', e => {
+          mx = e.clientX; my = e.clientY;
+          xh.classList.toggle('big', !!e.target.closest?.('a,button,.card,.tab,.svc,.faq-q'));
+        }, { passive: true });
+
+        addEventListener('mousedown', () => { xh.style.transform += ' scale(.8)'; });
+        (function loop() {
+          dx = lerp(dx, mx, .18); dy = lerp(dy, my, .18);
+          rx = lerp(rx, mx, .32); ry = lerp(ry, my, .32);
+          xh.style.transform = `translate(${rx}px,${ry}px)`;
+          dot.style.transform = `translate(${dx}px,${dy}px)`;
+          requestAnimationFrame(loop);
+        })();
       }
-      ['All', 'Fullstack', 'Frontend'].forEach((f, i) => {
-        const b = document.createElement('button'); b.className = 'tab'; b.textContent = f; b.setAttribute('aria-selected', i === 0);
-        b.onclick = () => { $$('.tab', fl).forEach(x => x.setAttribute('aria-selected', x === b)); render(f) }; fl.append(b);
+
+      /* =========================================================
+         6. PARTICLE CANVAS
+      ========================================================= */
+      (function particles() {
+        if (reduce) return;
+        const cv = $('#fx'), ctx = cv.getContext('2d');
+        let W = 0, H = 0, DPR = 1, parts = [], mouse = { x: -9999, y: -9999 };
+
+        function resize() {
+          DPR = Math.min(devicePixelRatio || 1, 2);
+          W = cv.width = Math.floor(innerWidth * DPR);
+          H = cv.height = Math.floor(innerHeight * DPR);
+          cv.style.width = innerWidth + 'px';
+          cv.style.height = innerHeight + 'px';
+          build();
+        }
+
+        function build() {
+          const density = innerWidth < 700 ? 22 : innerWidth < 1200 ? 38 : 52;
+          parts = Array.from({ length: density }, () => ({
+            x: Math.random() * W, y: Math.random() * H,
+            vx: (Math.random() - .5) * .22 * DPR, vy: (Math.random() - .5) * .22 * DPR,
+            s: (Math.random() * 3 + 1.6) * DPR,
+            a: Math.random() * Math.PI, va: (Math.random() - .5) * .02,
+            o: Math.random() * .35 + .12
+          }));
+        }
+
+        addEventListener('mousemove', e => { mouse.x = e.clientX * DPR; mouse.y = e.clientY * DPR; }, { passive: true });
+        addEventListener('mouseleave', () => { mouse.x = mouse.y = -9999; });
+
+        function frame() {
+          ctx.clearRect(0, 0, W, H);
+          const R = 150 * DPR;
+          for (const p of parts) {
+            // mouse repulsion
+            const ddx = p.x - mouse.x, ddy = p.y - mouse.y;
+            const d2 = ddx * ddx + ddy * ddy;
+            if (d2 < R * R && d2 > 1) {
+              const d = Math.sqrt(d2), f = (1 - d / R) * .9;
+              p.x += (ddx / d) * f * DPR; p.y += (ddy / d) * f * DPR;
+            }
+            p.x += p.vx; p.y += p.vy; p.a += p.va;
+            if (p.x < -20) p.x = W + 20; if (p.x > W + 20) p.x = -20;
+            if (p.y < -20) p.y = H + 20; if (p.y > H + 20) p.y = -20;
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.a);
+            ctx.fillStyle = `rgba(255,70,85,${p.o})`;
+            ctx.fillRect(-p.s / 2, -p.s / 2, p.s, p.s);
+            ctx.restore();
+          }
+          // connecting lines near cursor
+          ctx.lineWidth = DPR * .6;
+          for (let i = 0; i < parts.length; i++) {
+            const a = parts[i];
+            const ddx = a.x - mouse.x, ddy = a.y - mouse.y;
+            if (ddx * ddx + ddy * ddy < (190 * DPR) ** 2) {
+              ctx.strokeStyle = 'rgba(255,70,85,.28)';
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+            }
+          }
+          requestAnimationFrame(frame);
+        }
+
+        resize();
+        addEventListener('resize', resize);
+        requestAnimationFrame(frame);
+      })();
+
+      /* =========================================================
+         7. RIPPLE + MAGNETIC BUTTONS
+      ========================================================= */
+      document.addEventListener('pointerdown', e => {
+        const b = e.target.closest?.('.btn, .tab, .card, .faq-q, .svc');
+        if (!b) return;
+        const r = b.getBoundingClientRect();
+        const size = Math.max(r.width, r.height) * 2.2;
+        const s = document.createElement('span');
+        s.className = 'ripple';
+        s.style.width = s.style.height = size + 'px';
+        s.style.left = (e.clientX - r.left - size / 2) + 'px';
+        s.style.top = (e.clientY - r.top - size / 2) + 'px';
+        b.appendChild(s);
+        setTimeout(() => s.remove(), 700);
       });
-      render('All');
 
-      /* ---- ACHIEVEMENTS ---- */
-      $('#ach').innerHTML = ach.map(a => `<div class="rv"><b>${a[0]}</b><h3>${a[1]}</h3><small>${a[2]}</small></div>`).join('');
-
-      /* ---- REVEAL ---- */
-      function observe() {
-        io = io || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target) } }), { threshold: .12 });
-        $$('.rv:not(.in)').forEach(el => io.observe(el));
-      }
-      observe();
-
-      /* ---- COUNTERS ---- */
-      const co = new IntersectionObserver(es => es.forEach(e => {
-        if (!e.isIntersecting) return; co.unobserve(e.target);
-        const n = +e.target.dataset.n; let c = 0;
-        const t = setInterval(() => { c += Math.ceil(n / 20); if (c >= n) { c = n; clearInterval(t) } e.target.textContent = c + '+' }, 50);
-      }));
-      $$('[data-n]').forEach(el => co.observe(el));
-
-      /* ---- 3D TILT ---- */
-      function tilt() {
-        if (reduce || !matchMedia('(hover:hover)').matches) return;
-        $$('.card').forEach(c => {
-          c.onmousemove = e => {
-            const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-            c.style.transform = `perspective(700px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) translateY(-4px)`
-          };
-          c.onmouseleave = () => c.style.transform = '';
+      if (fine && !reduce) {
+        $$('.mag').forEach(m => {
+          const btn = m.firstElementChild;
+          m.addEventListener('mousemove', e => {
+            const r = m.getBoundingClientRect();
+            const x = e.clientX - r.left - r.width / 2;
+            const y = e.clientY - r.top - r.height / 2;
+            m.style.transform = `translate(${x * .28}px, ${y * .38}px)`;
+          });
+          m.addEventListener('mouseleave', () => { m.style.transform = ''; });
+          if (btn) btn.style.transition = 'none';
         });
       }
 
-      /* ---- CURSOR, PROGRESS, NAV ---- */
-      const xh = $('#xh'), bar = $('#bar');
-      addEventListener('mousemove', e => { xh.style.transform = `translate(${e.clientX}px,${e.clientY}px)`; xh.classList.toggle('big', !!e.target.closest('a,button')) }, { passive: true });
-      const links = $$('nav a[href^="#"]'), secs = links.map(a => $(a.getAttribute('href')));
-      addEventListener('scroll', () => {
-        bar.style.width = scrollY / (document.body.scrollHeight - innerHeight) * 100 + '%';
-        let k = -1; secs.forEach((s, i) => { if (s.getBoundingClientRect().top < innerHeight * .4) k = i });
-        links.forEach((a, i) => a.classList.toggle('on', i === k));
-      }, { passive: true });
-      const burger = $('#burger'), nav = $('#nav');
-      burger.onclick = () => burger.setAttribute('aria-expanded', nav.classList.toggle('open'));
-      nav.onclick = e => { if (e.target.closest('a')) nav.classList.remove('open') };
+      /* =========================================================
+         8. TEXT SCRAMBLE
+      ========================================================= */
+      const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#@$%&*/\\';
+      function scramble(el) {
+        if (reduce) return;
+        const original = el.dataset.orig || el.textContent;
+        el.dataset.orig = original;
+        // keep inner <i> markup: rebuild safely
+        const nodes = [...el.childNodes].map(n => ({ node: n, text: n.textContent }));
+        let frame = 0;
+        const total = 26;
+        const t = setInterval(() => {
+          frame++;
+          nodes.forEach(({ node, text }) => {
+            if (!text.trim()) return;
+            const reveal = Math.floor((frame / total) * text.length);
+            node.textContent = text.split('').map((ch, i) => {
+              if (i < reveal || ch === ' ') return ch;
+              return CHARS[Math.floor(Math.random() * CHARS.length)];
+            }).join('');
+          });
+          if (frame >= total) {
+            clearInterval(t);
+            nodes.forEach(({ node, text }) => node.textContent = text);
+          }
+        }, 28);
+      }
+
+      /* =========================================================
+         9. REVEAL OBSERVER
+      ========================================================= */
+      let io = null;
+      function observe() {
+        io = io || new IntersectionObserver(es => es.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        $$('.rv:not(.in)').forEach(el => io.observe(el));
+      }
+
+      // scramble observer
+      const sio = new IntersectionObserver(es => es.forEach(e => {
+        if (e.isIntersecting) { scramble(e.target); sio.unobserve(e.target); }
+      }), { threshold: .6 });
+      $$('[data-scramble]').forEach(el => sio.observe(el));
+
+      /* =========================================================
+         10. COUNTERS
+      ========================================================= */
+      const co = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        const n = +e.target.dataset.n;
+        let c = 0;
+        const step = Math.max(1, Math.ceil(n / 26));
+        const t = setInterval(() => {
+          c += step;
+          if (c >= n) { c = n; clearInterval(t); }
+          e.target.textContent = c + '+';
+        }, 42);
+      }), { threshold: .5 });
+
+      /* =========================================================
+         11. MARQUEE
+      ========================================================= */
+      (function marquee() {
+        const items = stack.map(s => `<li>${s}</li>`).join('');
+        $('#mq1').innerHTML = items;
+        $('#mq2').innerHTML = items;
+      })();
+
+      /* =========================================================
+         12. JOBS TABS
+      ========================================================= */
+      (function jobsUI() {
+        const jt = $('#jobTabs'), jp = $('#jobPanel');
+        function showJob(n) {
+          $$('.tab', jt).forEach((b, i) => b.setAttribute('aria-selected', i === n));
+          const j = jobs[n];
+          jp.innerHTML = `<h3>${j.role} <span>${j.at}</span></h3><small>${j.date}</small>
+            <ul>${j.pts.map(p => `<li>${p}</li>`).join('')}</ul>`;
+          jp.style.animation = 'none'; void jp.offsetHeight; jp.style.animation = '';
+        }
+        jobs.forEach((j, i) => {
+          const b = document.createElement('button');
+          b.className = 'tab'; b.role = 'tab'; b.textContent = j.tab;
+          b.onclick = () => showJob(i);
+          jt.append(b);
+        });
+        showJob(0);
+      })();
+
+      /* =========================================================
+         13. PROJECTS + FILTER + MODAL
+      ========================================================= */
+      (function projectsUI() {
+        const grid = $('#grid'), fl = $('#filters');
+        const modal = $('#modal'), mT = $('#mTitle'), mM = $('#mMeta'),
+          mD = $('#mDesc'), mC = $('#mChips');
+
+        function openModal(p) {
+          mT.textContent = p.t;
+          mM.textContent = `${p.k} • ${p.y}`;
+          mD.textContent = p.d || '';
+          mC.innerHTML = p.s.map(s => `<i>${s}</i>`).join('');
+          modal.classList.add('open');
+          Sound.open();
+        }
+        function closeModal() { modal.classList.remove('open'); }
+
+        $('#mClose').onclick = closeModal;
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        function render(f) {
+          const list = projects.filter(p => f === 'All' || p.k === f);
+          grid.innerHTML = list.map((p, i) => `
+            <article class="card rv" data-i="${projects.indexOf(p)}" style="transition-delay:${Math.min(i * 60, 360)}ms">
+              <div class="im">
+                <img loading="lazy" decoding="async" src="dist/img/project/${p.i}" alt="${p.t}"
+                     onerror="this.style.display='none'">
+              </div>
+              <div class="bd">
+                <h3>${p.t}</h3>
+                <small>${p.k} &bull; ${p.y}</small>
+                <div class="chips">${p.s.map(s => `<i>${s}</i>`).join('')}</div>
+              </div>
+            </article>`).join('');
+
+          observe(); tilt(); spotlight();
+
+          $$('.card', grid).forEach(c => {
+            c.addEventListener('click', () => openModal(projects[+c.dataset.i]));
+            c.addEventListener('keydown', e => {
+              if (e.key === 'Enter') openModal(projects[+c.dataset.i]);
+            });
+            c.tabIndex = 0;
+          });
+          setTimeout(() => $$('.card.rv', grid).forEach(c => c.classList.add('in')), 30);
+        }
+
+        ['All', 'Fullstack', 'Frontend'].forEach((f, i) => {
+          const b = document.createElement('button');
+          b.className = 'tab'; b.textContent = f;
+          b.setAttribute('aria-selected', i === 0);
+          b.onclick = () => {
+            $$('.tab', fl).forEach(x => x.setAttribute('aria-selected', x === b));
+            render(f);
+          };
+          fl.append(b);
+        });
+        render('All');
+      })();
+
+      /* =========================================================
+         14. TILT + SPOTLIGHT
+      ========================================================= */
+      function tilt() {
+        if (reduce || !fine) return;
+        $$('.card:not(.tilted)').forEach(c => {
+          c.classList.add('tilted');
+          let raf = null, tx = 0, ty = 0;
+          c.addEventListener('mousemove', e => {
+            const r = c.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - .5;
+            const y = (e.clientY - r.top) / r.height - .5;
+            tx = x; ty = y;
+            if (!raf) raf = requestAnimationFrame(() => {
+              c.style.transform = `perspective(760px) rotateY(${tx * 8}deg) rotateX(${-ty * 8}deg) translateY(-6px)`;
+              raf = null;
+            });
+          });
+          c.addEventListener('mouseleave', () => { c.style.transform = ''; });
+        });
+      }
+
+      function spotlight() {
+        if (!fine) return;
+        $$('.card:not(.spot)').forEach(c => {
+          c.classList.add('spot');
+          c.addEventListener('mousemove', e => {
+            const r = c.getBoundingClientRect();
+            c.style.setProperty('--px', ((e.clientX - r.left) / r.width * 100) + '%');
+            c.style.setProperty('--py', ((e.clientY - r.top) / r.height * 100) + '%');
+          });
+        });
+      }
+
+      /* =========================================================
+         15. SKILLS BARS
+      ========================================================= */
+      (function bars() {
+        const box = $('#bars');
+        box.innerHTML = skillsData.map(([n, v]) => `
+          <div class="skill">
+            <div class="skill-h"><span>${n}</span><b data-v="${v}">0%</b></div>
+            <div class="track"><i data-lv="${v}"></i></div>
+          </div>`).join('');
+
+        const bio = new IntersectionObserver(es => es.forEach(e => {
+          if (!e.isIntersecting) return;
+          bio.unobserve(e.target);
+          $$('i[data-lv]', e.target).forEach((bar, i) => {
+            setTimeout(() => { bar.style.width = bar.dataset.lv + '%'; }, i * 90);
+          });
+          $$('b[data-v]', e.target).forEach((b, i) => {
+            const target = +b.dataset.v;
+            let c = 0;
+            const t = setInterval(() => {
+              c += Math.max(1, Math.ceil(target / 30));
+              if (c >= target) { c = target; clearInterval(t); }
+              b.textContent = c + '%';
+            }, 30 + i * 10);
+          });
+        }), { threshold: .3 });
+        bio.observe(box);
+      })();
+
+      /* =========================================================
+         16. TIMELINE
+      ========================================================= */
+      $('#tl').innerHTML = timeline.map((t, i) => `
+        <div class="tl-item rv d${(i % 4) + 1}">
+          <b>${t[0]}</b>
+          <h4>${t[1]}</h4>
+          <p>${t[2]}</p>
+        </div>`).join('');
+
+      /* =========================================================
+         17. ACHIEVEMENTS
+      ========================================================= */
+      $('#ach').innerHTML = ach.map((a, i) => `
+        <div class="rv d${(i % 4) + 1}">
+          <b>${a[0]}</b>
+          <h3>${a[1]}</h3>
+          <small>${a[2]}</small>
+        </div>`).join('');
+
+      /* =========================================================
+         18. FAQ
+      ========================================================= */
+      (function faqUI() {
+        const list = $('#faqList');
+        list.innerHTML = faqs.map((f, i) => `
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false" aria-controls="fa${i}">
+              ${f[0]}<span></span>
+            </button>
+            <div class="faq-a" id="fa${i}" role="region"><p>${f[1]}</p></div>
+          </div>`).join('');
+
+        $$('.faq-q', list).forEach(btn => {
+          btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const ans = $('.faq-a', item);
+            const isOpen = item.classList.contains('open');
+
+            // close others
+            $$('.faq-item.open', list).forEach(o => {
+              o.classList.remove('open');
+              $('.faq-a', o).style.maxHeight = '0px';
+              $('.faq-q', o).setAttribute('aria-expanded', 'false');
+            });
+
+            if (!isOpen) {
+              item.classList.add('open');
+              ans.style.maxHeight = ans.scrollHeight + 'px';
+              btn.setAttribute('aria-expanded', 'true');
+            }
+          });
+        });
+      })();
+
+      /* =========================================================
+         19. CONTACT FORM VALIDATION
+      ========================================================= */
+      (function formUI() {
+        const form = $('#cform'), note = $('#note');
+        const fName = $('#fname'), fMail = $('#femail'), fMsg = $('#fmsg');
+        const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        const setErr = (el, bad) => el.closest('.field').classList.toggle('err', bad);
+
+        [fName, fMail, fMsg].forEach(el => {
+          el.addEventListener('input', () => setErr(el, false));
+        });
+
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          let ok = true;
+
+          if (fName.value.trim().length < 2) { setErr(fName, true); ok = false; }
+          if (!emailRx.test(fMail.value.trim())) { setErr(fMail, true); ok = false; }
+          if (fMsg.value.trim().length < 10) { setErr(fMsg, true); ok = false; }
+
+          if (!ok) {
+            note.textContent = '// Please fix the highlighted fields';
+            note.style.color = '#ff8a94';
+            note.classList.add('on');
+            return;
+          }
+
+          const btn = $('button[type=submit]', form);
+          const orig = btn.textContent;
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+
+          setTimeout(() => {
+            btn.textContent = 'Message sent ✓';
+            note.textContent = '// Thanks! This is a demo form — reach me via Instagram or LinkedIn.';
+            note.style.color = 'var(--red)';
+            note.classList.add('on');
+            form.reset();
+            setTimeout(() => {
+              btn.textContent = orig;
+              btn.disabled = false;
+            }, 2400);
+          }, 1100);
+        });
+      })();
+
+      /* =========================================================
+         20. NAV / SCROLL / PROGRESS / TOP
+      ========================================================= */
+      (function navUI() {
+        const bar = $('#bar'), hdr = $('#hdr'), top = $('#top');
+        const links = $$('nav a.lnk');
+        const secs = links.map(a => $(a.getAttribute('href')));
+
+        function onScroll() {
+          const max = document.body.scrollHeight - innerHeight;
+          bar.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + '%';
+          hdr.classList.toggle('small', scrollY > 40);
+          top.classList.toggle('show', scrollY > 600);
+
+          let k = -1;
+          secs.forEach((s, i) => {
+            if (s && s.getBoundingClientRect().top < innerHeight * .4) k = i;
+          });
+          links.forEach((a, i) => a.classList.toggle('on', i === k));
+        }
+        addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+
+        top.onclick = () => scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+
+        const burger = $('#burger'), nav = $('#nav');
+        burger.onclick = () => {
+          const open = nav.classList.toggle('open');
+          burger.setAttribute('aria-expanded', open);
+        };
+        nav.onclick = e => {
+          if (e.target.closest('a')) {
+            nav.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+          }
+        };
+      })();
+
+      /* =========================================================
+         21. HERO PARALLAX
+      ========================================================= */
+      (function parallax() {
+        if (reduce || !fine) return;
+        const els = $$('[data-parallax]');
+        let mx = 0, my = 0, cx = 0, cy = 0;
+        addEventListener('mousemove', e => {
+          mx = (e.clientX / innerWidth - .5) * 2;
+          my = (e.clientY / innerHeight - .5) * 2;
+        }, { passive: true });
+        (function loop() {
+          cx = lerp(cx, mx, .06); cy = lerp(cy, my, .06);
+          els.forEach(el => {
+            const f = parseFloat(el.dataset.parallax) * 100;
+            el.style.setProperty('transform', el.classList.contains('glyph')
+              ? `translateY(-50%) translate(${cx * f}px, ${cy * f}px) rotate(45deg)`
+              : `translate(${cx * f}px, ${cy * f}px)`);
+          });
+          requestAnimationFrame(loop);
+        })();
+        // glyph keeps its own spin — override transform animation conflict by re-applying rotation
+      })();
+
+      /* =========================================================
+         22. EASTER EGG — type "ace"
+      ========================================================= */
+      (function ace() {
+        let buf = '';
+        addEventListener('keydown', e => {
+          if (e.key.length !== 1) return;
+          buf = (buf + e.key.toLowerCase()).slice(-3);
+          if (buf === 'ace') {
+            const el = $('#ace');
+            el.classList.remove('on');
+            void el.offsetWidth;
+            el.classList.add('on');
+            Sound.click();
+            setTimeout(() => el.classList.remove('on'), 1200);
+          }
+        });
+      })();
+
+      /* =========================================================
+         23. INIT
+      ========================================================= */
+      observe();
+      $$('[data-n]').forEach(el => co.observe(el));
+      tilt();
+      spotlight();
+
+      // re-observe dynamically injected nodes
+      new MutationObserver(() => observe()).observe(document.body, { childList: true, subtree: true });
+
     })();
   </script>
 </body>
